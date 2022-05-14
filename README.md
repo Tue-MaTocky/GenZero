@@ -1,2 +1,2 @@
 # GenZero
-Generation Zero - a First Person Shooter game developed by Systemic Reaction - character planner
+Generation Zero - a first person shooter(fps) game developed by Systemic Reaction - character planner
