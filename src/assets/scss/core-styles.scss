@@ -35,14 +35,13 @@
     }
     #Header {
         height: $header-height;
-        border-bottom: 1px solid #cccccc;
         #Header_Content,
         button {
             height: 100%;
         }
         #Header_Content {
             flex: 0 1 $content-width;
-            @include header.header-nav-styles();
+            @include header.header-button-styles();
         }
     }
     #Main_Content_Wrap {
