@@ -1,8 +1,4 @@
-$header-selected-button-color: rgb(198,197,190);
-$header-skill-color: #357963;
-$header-weapon-color: #00a8bd;
-$header-gear-color: #a1833d;
-$skill-progress-color: #14d515;
+@use './header-colors.scss' as c;
 
 @mixin header-button-styles($spec: ()) {
     $spec: map-merge(
@@ -25,21 +21,21 @@ $skill-progress-color: #14d515;
     // }
 
     &.skill-page {
-        background-color: $header-skill-color;
+        background-color: c.$header-skill-color;
         .skill-button {
             @include selected-button();
         }
     }
 
     &.weapon-page {
-        background-color: $header-weapon-color;
+        background-color: c.$header-weapon-color;
         .weapon-button {
             @include selected-button();
         }
     }
 
     &.gear-page {
-        background-color: $header-gear-color;
+        background-color: c.$header-gear-color;
         .gear-button {
             @include selected-button();
         }
@@ -59,7 +55,7 @@ $skill-progress-color: #14d515;
     }
 
     button {
-        background-color: $header-selected-button-color;
+        background-color: c.$header-selected-button-color;
         color: #000000;
     }
 }
