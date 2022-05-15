@@ -1,0 +1,75 @@
+@use './header-colors.scss' as c;
+
+@mixin header-button-styles($spec: ()) {
+    $spec: map-merge(
+        (), 
+        $spec
+    );
+
+    // &.skill-page,
+    // &.weapon-page,
+    // &.gear-page {
+        @include button-style();
+        button {
+            color: #ffffff;
+            border-radius: 0;
+            text-transform: uppercase;
+            font-size: 20px;
+            padding: 0 5px;
+            font-weight: 100;
+        }
+    // }
+
+    &.skill-page {
+        background-color: c.$header-skill-color;
+        .skill-button {
+            @include selected-button();
+        }
+    }
+
+    &.weapon-page {
+        background-color: c.$header-weapon-color;
+        .weapon-button {
+            @include selected-button();
+        }
+    }
+
+    &.gear-page {
+        background-color: c.$header-gear-color;
+        .gear-button {
+            @include selected-button();
+        }
+    }
+}
+
+@mixin selected-button() {
+    border-color: rgba(198,197,190,0.3);
+    > span {
+        border-color: rgba(198,197,190,0.6);
+    }
+    > span > span {
+        border-color: rgba(198,197,190,0.75);
+    }
+    > span > span > span {
+        border-color: rgba(198,197,190,1);
+    }
+
+    button {
+        background-color: c.$header-selected-button-color;
+        color: #000000;
+    }
+}
+
+@mixin button-style () {
+    span,
+    > span,
+    > span > span,
+    > span > span > span {
+        border: 0 solid rgba(198,197,190,0.3);
+        border-style: solid;
+        border-color: transparent;
+        border-width: 0 3px 0;
+        padding: 0 2px;
+        display: flex;
+    }
+}

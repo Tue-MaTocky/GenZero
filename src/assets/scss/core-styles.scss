@@ -1,0 +1,64 @@
+@use './header-styles.scss' as header;
+
+@mixin core-styles($spec: ()) {
+    $spec: map-merge(
+        (), 
+        $spec
+    );
+
+    $header-height: 50px;
+    $content-width: 1280px;
+
+    html {
+        font-size: 16px;
+        font-weight: 400;
+        font-family: Reboto, "Helvetica Neue", sans-serif;
+    }
+    html,
+    body,
+    #App_Content_Wrap {
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+    }
+    app-root {
+        flex-direction: column;
+        box-sizing: border-box;
+        display: flex;
+        height: 100%;
+    }
+    #App_Content_Wrap {
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
+    }
+    #Header {
+        height: $header-height;
+        #Header_Content,
+        button {
+            height: 100%;
+        }
+        #Header_Content {
+            flex: 0 1 $content-width;
+            @include header.header-button-styles();
+        }
+    }
+    #Main_Content_Wrap {
+        height: calc(100vh - $header-height);
+        width: 100%;
+        overflow: auto;
+        router-outlet {
+            display: none;
+        }
+        #Main_Content {
+            flex: 0 1 $content-width;
+            > *:not(router-outlet) {
+                flex-direction: column;
+                box-sizing: border-box;
+                display: flex;
+                flex: 0 1 100%;
+            }
+        }
+    }
+}
