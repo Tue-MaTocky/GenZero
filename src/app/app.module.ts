@@ -3,18 +3,27 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SkillsComponent } from './skills/skills.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatButtonModule } from "@angular/material/button";
+
+import { SkillsComponent } from './skills/skills.component';
+import { WeaponsComponent } from './weapons/weapons.component';
+import { GearComponent } from './gear/gear.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    SkillsComponent
+    SkillsComponent,
+    WeaponsComponent,
+    GearComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
