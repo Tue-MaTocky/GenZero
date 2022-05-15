@@ -1,0 +1,47 @@
+$header-selected-button-color: #c6c5be;
+$header-skill-color: #357963;
+$header-weapon-color: #433da1;
+$header-gear-color: #a1833d;
+$skill-progress-color: #14d515;
+
+@mixin header-nav-styles($spec: ()) {
+    $spec: map-merge(
+        (), 
+        $spec
+    );
+
+    &.skill-page,
+    &.weapon-page,
+    &.gear-page {
+        button {
+            color: #ffffff;
+        }
+    }
+
+    &.skill-page {
+        background-color: $header-skill-color;
+        .skill-button {
+            @include selected-button();
+        }
+    }
+
+    &.weapon-page {
+        background-color: $header-weapon-color;
+        .weapon-button {
+            @include selected-button();
+        }
+    }
+
+    &.gear-page {
+        background-color: $header-gear-color;
+        .gear-button {
+            @include selected-button();
+        }
+    }
+}
+
+@mixin selected-button() {
+    background-color: $header-selected-button-color;
+    color: #000000;
+    border-radius: 0;
+}

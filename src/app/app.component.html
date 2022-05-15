@@ -1,10 +1,14 @@
 <div fxLayout="column" id="App_Content_Wrap">
-  <div fxLayout="row" id="Header">
-    <button mat-button [routerLink]="'\gen-zero/skills'" routerLinkActive="active">Skills</button>
-    <button mat-button [routerLink]="'\gen-zero/weapons'" routerLinkActive="active">Weapons</button>
-    <button mat-button [routerLink]="'\gen-zero/gear'" routerLinkActive="active">Profile</button>
+  <div fxLayout="row" fxLayoutAlign="center" id="Header">
+    <div fxLayout="row" id="Header_Content" [ngClass]="headerCssClass">
+      <button class="skill-button" mat-button [routerLink]="'\gen-zero/skills'" routerLinkActive="active">Skills</button>
+      <button class="weapon-button" mat-button [routerLink]="'\gen-zero/weapons'" routerLinkActive="active">Weapons</button>
+      <button class="gear-button" mat-button [routerLink]="'\gen-zero/gear'" routerLinkActive="active">Profile</button>
+    </div>
   </div>
-  <div id="Main_Content_Wrap" fxLayout="column">
-    <router-outlet></router-outlet>
+  <div fxLayout="row" fxLayoutAlign="center" id="Main_Content_Wrap" >
+    <div fxLayout="row" id="Main_Content">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>

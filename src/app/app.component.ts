@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from './services/data.service';
 import { Title } from '@angular/platform-browser';
-import { Router } from '@angular/router';
+import { Router, Event, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'GenZero';
+  cssClassMap = new Map();
+  headerCssClass: string = "";
 
   constructor (
     readonly router: Router,
@@ -19,5 +20,15 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.titleSrv.setTitle("GenZero - Skill Calculator");
+
+    this.cssClassMap.set("/gen-zero/skills", "skill-page");
+    this.cssClassMap.set("/gen-zero/weapons", "weapon-page");
+    this.cssClassMap.set("/gen-zero/gear", "gear-page");
+
+    this.router.events.subscribe((event: Event) => {
+      if (event instanceof NavigationEnd) {
+        this.headerCssClass = this.cssClassMap.get(this.router.url);
+      }
+    });
   }
 }
