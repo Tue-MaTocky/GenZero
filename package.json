@@ -16,7 +16,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy": "firebase deploy --only hosting"
   },
   "dependencies": {
     "@angular/animations": "~13.3.0",
