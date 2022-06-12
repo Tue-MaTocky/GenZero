@@ -1,5 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { environment } from 'src/environments/environment';
+
+// https://www.npmjs.com/package/@angular/fire
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+// https://github.com/angular/angularfire/blob/HEAD/docs/analytics/getting-started.md
+// import { AngularFireAnalyticsModule, ScreenTrackingService } from '@angular/fire/compat/analytics';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,13 +27,17 @@ import { GearComponent } from './gear/gear.component';
     GearComponent
   ],
   imports: [
+    provideFirebaseApp(()=> initializeApp(environment.firebase)),
+    // AngularFireAnalyticsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
     MatButtonModule
   ],
-  providers: [],
+  providers: [
+    // ScreenTrackingService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
