@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { environment } from 'src/environments/environment';
 
@@ -18,18 +19,24 @@ import { SkillsComponent } from './skills/skills.component';
 import { WeaponsComponent } from './weapons/weapons.component';
 import { GearComponent } from './gear/gear.component';
 
+import { RightClickDirective } from './directives/right-click.directive';
+import { CloakDirective } from './directives/cloak.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     SkillsComponent,
     WeaponsComponent,
-    GearComponent
+    GearComponent,
+    // Directives
+    RightClickDirective,
+    CloakDirective
   ],
   imports: [
     provideFirebaseApp(()=> initializeApp(environment.firebase)),
     // AngularFireAnalyticsModule,
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FlexLayoutModule,

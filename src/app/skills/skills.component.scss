@@ -1,0 +1,97 @@
+$progress-bar-color: #17F018;
+$progress-bar-background: #808080;
+$text-color: #e0e0e0;
+
+:host {
+    position: relative;
+    background-color: #141718;
+    background-image: url(/assets/img/skills_bg.png);
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-position-x: center;
+}
+
+.underlay {
+    background-color: #ffffff;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url(/assets/img/skills_bg_robot.png);
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-position-x: center;
+    opacity: 0;
+}
+
+.main-content {
+    z-index: 2;
+}
+
+.skill-progress {
+    padding: 1rem 0;
+    .active-specialization {
+        .icon {
+            width: 3rem;
+            height: 3rem;
+            background-color: lime;
+        }
+        .name {
+            margin: auto 0;
+            padding-left: 0.15rem;
+        }
+        .title,
+        .skill-name {
+            text-transform: uppercase;
+            line-height: 1rem;
+        }
+        .title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: $text-color;
+            letter-spacing: 0.1rem;
+        }
+        .skill-name {
+            font-size: 0.85rem;
+            color: $text-color;
+        }
+    }
+    .skill-bar {
+        > span {
+            line-height: 3rem;
+            font-size: 1.2rem;
+            font-weight: 100;
+            min-width: 3.1rem;
+            color: $text-color;
+        }
+        .progress-bar {
+            height: 3rem;
+            padding-top: 0.8rem;
+            padding-bottom: 0.85rem;
+            padding-left: 0.3rem;
+            > span {
+                background-color: $progress-bar-background;
+                width: .5rem;
+                height: 100%;
+                margin: 0 0.25rem 0 0;
+                transform: skew(33deg, 0deg);
+                &.highlight {
+                    background-color: $progress-bar-color;
+                    box-shadow: 0 0 0.5rem $progress-bar-color;                }
+            }
+        }
+    }
+}
+
+.skill-selection {
+    .skill-button {
+        width: 3rem;
+        height: 3rem;
+        background-color: lime;
+        cursor: pointer;
+
+        margin: 20px 20px;
+    }
+}
