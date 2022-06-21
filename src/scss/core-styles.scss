@@ -21,6 +21,9 @@
         width: 100vw;
         margin: 0;
         padding: 0;
+        .copy-right-statement {
+            margin: 0.25rem auto;
+        }
     }
     app-root {
         flex-direction: column;
@@ -58,7 +61,8 @@
                 box-sizing: border-box;
                 display: flex;
                 flex: 0 1 100%;
-                max-height: calc(100% - 100px);
+                // max-height: calc(100% - 100px);
+                max-height: 100%;
             }
         }
     }

@@ -1,26 +1,46 @@
-<div fxLayout="row" fxFlex="100%" class="main-content">
-    <div class="main-view" fxLayout="column" fxFlex="75%">
-        <div class="skill-selection" fxFlex="100%">
-            <div class="skill-button" (click)="addSkill()" (rightClick)="removeSkill()"></div>
+<div fxLayout="column" fxFlex="100%" class="main-content">
+    <div class="main-view" fxLayout="row" fxFlex="100%">
+        <div class="skill-selection" fxLayout="row" fxFlex="78%">
+            <div class="spacer"></div>
+            <div fxFlex="25%" class="combat">
+                <h2>Combat</h2>
+                <div class="skill-button" (click)="addSkill()" (rightClick)="removeSkill()"></div>
+            </div>
+            <div class="spacer"></div>
+            <div fxFlex="25%" class="support">
+                <h2>Support</h2>
+                <div class="skill-button" (click)="addSkill()" (rightClick)="removeSkill()"></div>
+            </div>
+            <div class="spacer"></div>
+            <div fxFlex="25%" class="survival">
+                <h2>Survial</h2>
+                <div class="skill-button" (click)="addSkill()" (rightClick)="removeSkill()"></div>
+            </div>
+            <div class="spacer"></div>
+            <div fxFlex="25%" class="tech">
+                <h2>Tech</h2>
+                <div class="skill-button" (click)="addSkill()" (rightClick)="removeSkill()"></div>
+            </div>
+            <div class="spacer"></div>
         </div>
-        <div class="skill-progress" fxLayout="row">
-            <div style="margin-left: 20px;" class="active-specialization" fxLayout="row" [cloak]="false">
-                <div class="icon"></div>
-                <div class="name" fxLayout="column">
-                    <span class="title">Active Specialization</span>
-                    <span class="skill-name">Vangard</span>
-                </div>
-            </div>
-            <div fxFlex="0 1 auto" fxLayout="row" class="skill-bar">
-                <span style="margin-left: 20px;">Lvl {{skillCount + 1}}</span>
-                <div class="progress-bar" fxLayout="row">
-                    <span *ngFor="let in of SkillBarList; let i = index" [ngClass]="{'highlight': barProgressHighlight(i)}"></span>
-                </div>
-            </div>
+        <div class="skill-details" fxLayout="column" fxFlex="22%">
+
         </div>
     </div>
-    <div class="skill-details" fxLayout="column" fxFlex="25%">
-
+    <div class="skill-progress" fxLayout="row">
+        <div class="active-specialization" fxLayout="row" [cloak]="false">
+            <div class="icon"></div>
+            <div class="name" fxLayout="column">
+                <span class="title">Active Specialization</span>
+                <span class="skill-name">Vangard</span>
+            </div>
+        </div>
+        <div fxFlex="0 1 auto" fxLayout="row" class="skill-bar">
+            <span>Lvl {{skillCount + 1}}</span>
+            <div class="progress-bar" fxLayout="row">
+                <span *ngFor="let in of SkillBarList; let i = index" [ngClass]="{'highlight': barProgressHighlight(i)}"></span>
+            </div>
+        </div>
     </div>
 </div>
 <div class="underlay" [style.opacity]="skillProgress"></div>
