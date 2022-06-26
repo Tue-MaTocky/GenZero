@@ -188,7 +188,35 @@ export const skillData: SkillData = {
         }]
     },
     support: {
-        left: [],
+        left: [{
+            id: "sc0",
+            label: "Throw Accuracy",
+            icon: "icon-throw-accuracy",
+            mainImg: "throw_accuracy.jpg",
+            descriptionText: [
+                "Increases the accuracy of thrown items.",
+                "Level 1: +60% increased accuracy",
+                "Level 2: +100% increased accuracy"
+            ],
+            maxLevel: 2,
+            specialization: false,
+            prerequisite: "",
+            dependent: "sc1"
+        },{
+            id: "sc1",
+            label: "Flanking",
+            icon: "icon-flanking",
+            mainImg: "flanking.jpg",
+            descriptionText: [
+                "Increases the chance of causing stagger when firing at an enemy that is targeting another player.",
+                "Level 1: +20% chance of stagger",
+                "Level 2: +40% chance of stagger"
+            ],
+            maxLevel: 2,
+            specialization: false,
+            prerequisite: "sc0",
+            dependent: "sc2"
+        }],
         right: []
     },
     survial: {
