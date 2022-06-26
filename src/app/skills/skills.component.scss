@@ -2,10 +2,14 @@ $progress-bar-color: #17F018;
 $progress-bar-background: #808080;
 $text-color: #d0d0d0;
 $text-hover: #ffffff;
-$combat-color: rgba(150,0,0,0.2);
-$support-color: rgba(125,0,125,0.2);
-$survival-color: rgba(0,100,100,0.2);
-$tech-color: rgba(0, 60, 150, 0.2);
+$combat-color: rgba(150,0,0,0.3);
+$support-color: rgba(120,0,165,0.3);
+$survival-color: rgba(0,120,120,0.3);
+$tech-color: rgba(0, 60, 150, 0.3);
+$combat-title-color: transparentize($combat-color, 0.1);
+$support-title-color: transparentize($support-color, 0.1);
+$survival-title-color: transparentize($survival-color, 0.1);
+$tech-title-color: transparentize($tech-color, 0.1);
 
 :host {
     position: relative;
@@ -98,7 +102,6 @@ $tech-color: rgba(0, 60, 150, 0.2);
         width: 0.5rem;
         background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
         box-shadow: 0 -1rem 3rem #000000;
-        height: 80%;
         flex-shrink: 0;
     }
     .skill-button {
@@ -116,35 +119,37 @@ $tech-color: rgba(0, 60, 150, 0.2);
         text-align: center;
         line-height: 3rem;
         padding: 1rem 0 0;
-        border-radius: 0 0 15% 15%;
+        // border-radius: 0 0 15% 15%;
     }
     > div {
+        background-size: 100% 80%;
+        background-repeat: no-repeat;
         &.combat {
             background-image: linear-gradient($combat-color, rgba(0,0,0,0));
             h2 {
-                background-color: $combat-color;
-                box-shadow: 0 2.5rem 2.5rem $combat-color;
+                background-color: $combat-title-color;
+                box-shadow: 0 2.5rem 1.5rem $combat-title-color;
             }
         }
         &.support {
             background-image: linear-gradient($support-color, rgba(0,0,0,0));
             h2 {
-                background-color: $support-color;
-                box-shadow: 0 2.5rem 2.5rem $support-color;
+                background-color: $support-title-color;
+                box-shadow: 0 2.5rem 1.5rem $support-title-color;
             }
         }
         &.survival {
             background-image: linear-gradient($survival-color, rgba(0,0,0,0));
             h2 {
-                background-color: $survival-color;
-                box-shadow: 0 2.5rem 2.5rem $survival-color;
+                background-color: $survival-title-color;
+                box-shadow: 0 2.5rem 1.5rem $survival-title-color;
             }
         }
         &.tech {
             background-image: linear-gradient($tech-color, rgba(0,0,0,0));
             h2 {
-                background-color: $tech-color;
-                box-shadow: 0 2.5rem 2.5rem $tech-color;
+                background-color: $tech-title-color;
+                box-shadow: 0 2.5rem 1.5rem $tech-title-color;
             }
         }
         &:hover h2 {
