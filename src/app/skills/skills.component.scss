@@ -14,7 +14,7 @@ $tech-title-color: transparentize($tech-color, 0.1);
 :host {
     position: relative;
     background-color: #141718;
-    background-image: url(/assets/img/skills_bg.png);
+    background-image: url(/assets/img/skills_bg.jpg);
     background-repeat: no-repeat;
     background-position-y: bottom;
     background-position-x: center;
@@ -28,7 +28,7 @@ $tech-title-color: transparentize($tech-color, 0.1);
     left: 0;
     height: 100%;
     width: 100%;
-    background-image: url(/assets/img/skills_bg_robot.png);
+    background-image: url(/assets/img/skills_bg_robot.jpg);
     background-repeat: no-repeat;
     background-position-y: bottom;
     background-position-x: center;
