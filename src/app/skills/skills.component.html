@@ -2,44 +2,87 @@
     <div class="main-view" fxLayout="row" fxFlex="100%">
         <div class="skill-selection" fxLayout="row" fxFlex="75%">
             <div class="spacer"></div>
-            <div fxFlex="25%" class="combat">
+            <div fxLayout="column" fxFlex="25%" class="combat">
                 <h2>Combat</h2>
-                <div class="skill-button" (click)="addSkill()" (rightClick)="removeSkill()"></div>
+                <div fxLayout="row" fxFlex="100%" class="skill-group">
+                    <div fxFlex="50%" fxLayout="column" fxLayoutAlign="space-between center">
+                        <div *ngFor="let skill of skills.combat.left" class="skill-button" (mouseenter)="updateView(skill)" (click)="addSkill()" (rightClick)="removeSkill()"></div>
+                    </div>
+                    <div fxFlex="50%" fxLayout="column" fxLayoutAlign="space-between center">
+                        <div *ngFor="let skill of skills.combat.right" class="skill-button" (mouseenter)="updateView(skill)" (click)="addSkill()" (rightClick)="removeSkill()"></div>
+                    </div>
+                </div>
             </div>
             <div class="spacer"></div>
-            <div fxFlex="25%" class="support">
+            <div fxLayout="column" fxFlex="25%" class="support">
                 <h2>Support</h2>
-                <div class="skill-button" (click)="addSkill()" (rightClick)="removeSkill()"></div>
+                <div fxLayout="row" fxFlex="100%" class="skill-group">
+                    <div fxFlex="50%" fxLayout="column" fxLayoutAlign="space-between center">
+                        <div *ngFor="let skill of skills.support.left" class="skill-button" (mouseenter)="updateView(skill)" (click)="addSkill()" (rightClick)="removeSkill()"></div>
+                    </div>
+                    <div fxFlex="50%" fxLayout="column" fxLayoutAlign="space-between center">
+                        <div *ngFor="let skill of skills.support.right" class="skill-button" (mouseenter)="updateView(skill)" (click)="addSkill()" (rightClick)="removeSkill()"></div>
+                    </div>
+                </div>
             </div>
             <div class="spacer"></div>
-            <div fxFlex="25%" class="survival">
+            <div fxLayout="column" fxFlex="25%" class="survival">
                 <h2>Survial</h2>
-                <div class="skill-button" (click)="addSkill()" (rightClick)="removeSkill()"></div>
+                <div fxLayout="row" fxFlex="100%" class="skill-group">
+                    <div fxFlex="50%" fxLayout="column" fxLayoutAlign="space-between center">
+                        <div *ngFor="let skill of skills.survival.left" class="skill-button" (mouseenter)="updateView(skill)" (click)="addSkill()" (rightClick)="removeSkill()"></div>
+                    </div>
+                    <div fxFlex="50%" fxLayout="column" fxLayoutAlign="space-between center">
+                        <div *ngFor="let skill of skills.survival.right" class="skill-button" (mouseenter)="updateView(skill)" (click)="addSkill()" (rightClick)="removeSkill()"></div>
+                    </div>
+                </div>
             </div>
             <div class="spacer"></div>
-            <div fxFlex="25%" class="tech">
+            <div fxLayout="column" fxFlex="25%" class="tech">
                 <h2>Tech</h2>
-                <div class="skill-button" (click)="addSkill()" (rightClick)="removeSkill()"></div>
+                <div fxLayout="row" fxFlex="100%" class="skill-group">
+                    <div fxFlex="50%" fxLayout="column" fxLayoutAlign="space-between center">
+                        <div *ngFor="let skill of skills.tech.left" class="skill-button" (mouseenter)="updateView(skill)" (click)="addSkill()" (rightClick)="removeSkill()"></div>
+                    </div>
+                    <div fxFlex="50%" fxLayout="column" fxLayoutAlign="space-between center">
+                        <div *ngFor="let skill of skills.tech.right" class="skill-button" (mouseenter)="updateView(skill)" (click)="addSkill()" (rightClick)="removeSkill()"></div>
+                    </div>
+                </div>
             </div>
             <div class="spacer"></div>
         </div>
         <div class="skill-details" fxLayout="column" fxFlex="25%">
-
+            <h2>{{skillView.label}}</h2>
+            <div class="skill-count" fxLayout="row">
+                <span class="highlight"><i></i></span>
+                <span *ngIf="skillView.maxLevel >= 2"><i></i></span>
+                <span *ngIf="skillView.maxLevel >= 3"><i></i></span>
+            </div>
+            <img src="{{mainImg(skillView.mainImg)}}">
+            <div class="description">
+                <p *ngFor="let text of skillView.descriptionText">{{text}}</p>
+                <p *ngIf="skillView.specialization">Only one specialization may be active at a time.</p>
+            </div>
         </div>
     </div>
     <div class="skill-progress" fxLayout="row">
-        <div class="active-specialization" fxLayout="row" [cloak]="false">
-            <div class="icon"></div>
-            <div class="name" fxLayout="column">
-                <span class="title">Active Specialization</span>
-                <span class="skill-name">Vangard</span>
+        <div fxLayout="row" fxFlex="75%" fxLayoutAlign="center" fxLayoutGap="4%">
+            <div class="active-specialization" fxLayout="row" [cloak]="false">
+                <div class="icon"></div>
+                <div class="name" fxLayout="column">
+                    <span class="title">Active Specialization</span>
+                    <span class="skill-name">Vangard</span>
+                </div>
+            </div>
+            <div fxFlex="0 1 auto" fxLayout="row" class="skill-bar">
+                <span>Lvl {{skillCount + 1}}</span>
+                <div class="progress-bar" fxLayout="row">
+                    <span *ngFor="let in of SkillBarList; let i = index" [ngClass]="{'highlight': barProgressHighlight(i)}"></span>
+                </div>
             </div>
         </div>
-        <div fxFlex="0 1 auto" fxLayout="row" class="skill-bar">
-            <span>Lvl {{skillCount + 1}}</span>
-            <div class="progress-bar" fxLayout="row">
-                <span *ngFor="let in of SkillBarList; let i = index" [ngClass]="{'highlight': barProgressHighlight(i)}"></span>
-            </div>
+        <div fxLayout="row" fxFlex="25%">
+
         </div>
     </div>
 </div>

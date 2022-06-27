@@ -1,10 +1,13 @@
 export class SkillData {
-    [skillTree: string]: {
-        left: Skill[];
-        right: Skill[];
-    }
+    combat: SkillGroup;
+    support: SkillGroup;
+    survival: SkillGroup;
+    tech: SkillGroup;
 }
-
+export class SkillGroup {
+    left: Skill[];
+    right: Skill[];
+}
 export class Skill {
     id: string;
     label: string;
@@ -264,7 +267,8 @@ export const skillData: SkillData = {
             icon: "icon-commander",
             mainImg: "commander.jpg",
             descriptionText: [
-                "While the Commander specialization is active, deployed Field Radios can be used an additional 3 times. (Total of 6 uses)"
+                "While the Commander specialization is active, deployed Field Radios can be used an additional 3 times.",
+                "(Total of 6 Field Radio uses)"
             ],
             maxLevel: 1,
             specialization: true,
