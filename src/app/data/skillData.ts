@@ -352,7 +352,7 @@ export const skillData: SkillData = {
             descriptionText: [
                 "While the Medic specialization is active, any player you revive (including yourself) returns to the game with 100% health."
             ],
-            maxLevel: 2,
+            maxLevel: 1,
             specialization: true,
             prerequisite: "sd4",
             dependent: ""
