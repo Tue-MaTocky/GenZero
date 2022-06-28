@@ -74,69 +74,51 @@ export class SkillsComponent implements OnInit {
     this.selectedSpecial = this.specialList[index];
   }
 
-  private addToSpecial(skill: Skill) {
-    this.specialList.push(skill);
-    this.selectedSpecial = skill;
-  }
-
-  private removeFromSpecial(skill: Skill) {
-    const index = this.specialList.indexOf(skill);
-    this.specialList.splice(index, 1);
-    if (this.selectedSpecial === skill) {
-      if (this.specialList.length) {
-        this.selectedSpecial = this.specialList[0];
-      } else {
-        this.selectedSpecial = new Skill;
-        this.selectedSpecial.label = "-"
-        this.selectedSpecial.icon = "icon-lock";
-      }
-    }
-  }
-
-  private initData() {
+  initData(clearData = false) {
     this.selectedSpecial = new Skill;
     this.selectedSpecial.label = "-";
     this.selectedSpecial.icon = "icon-lock";
     this.skillCount = 0;
+    this.skillProgress = -1;
     this.specialList = [];
 
-    let valid = true;
+    let valid = !clearData;
     this.skills.combat.left.forEach(skill => {
       if (valid) { valid = this.validateSkill(skill); }
       else { this.data.clear(skill.id); }
     });
 
-    valid = true;
+    valid = !clearData;
     this.skills.combat.right.forEach(skill => {
       valid = this.initSkill(skill, valid);
     });
 
-    valid = true;
+    valid = !clearData;
     this.skills.support.left.forEach(skill => {
       valid = this.initSkill(skill, valid);
     });
 
-    valid = true;
+    valid = !clearData;
     this.skills.support.right.forEach(skill => {
       valid = this.initSkill(skill, valid);
     });
 
-    valid = true;
+    valid = !clearData;
     this.skills.survival.left.forEach(skill => {
       valid = this.initSkill(skill, valid);
     });
 
-    valid = true;
+    valid = !clearData;
     this.skills.survival.right.forEach(skill => {
       valid = this.initSkill(skill, valid);
     });
 
-    valid = true;
+    valid = !clearData;
     this.skills.tech.left.forEach(skill => {
       valid = this.initSkill(skill, valid);
     });
 
-    valid = true;
+    valid = !clearData;
     this.skills.tech.right.forEach(skill => {
       valid = this.initSkill(skill, valid);
     });
@@ -168,4 +150,24 @@ export class SkillsComponent implements OnInit {
     }
     return true;
   }
+
+  private addToSpecial(skill: Skill) {
+    this.specialList.push(skill);
+    this.selectedSpecial = skill;
+  }
+
+  private removeFromSpecial(skill: Skill) {
+    const index = this.specialList.indexOf(skill);
+    this.specialList.splice(index, 1);
+    if (this.selectedSpecial === skill) {
+      if (this.specialList.length) {
+        this.selectedSpecial = this.specialList[0];
+      } else {
+        this.selectedSpecial = new Skill;
+        this.selectedSpecial.label = "-"
+        this.selectedSpecial.icon = "icon-lock";
+      }
+    }
+  }
+
 }

@@ -105,6 +105,15 @@ $skill-column-gap: 0.5rem;
             }
         }
     }
+    .reset-button {
+        button {
+            color: $text-color;
+            border: 1px solid $text-shade-color;
+            margin: 0 0.5rem;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+        }
+    }
 }
 
 .skill-selection {
