@@ -44,15 +44,21 @@ $skill-column-gap: 0.5rem;
 }
 
 .skill-progress {
+    @extend .no-select;
     padding: 1rem 0;
     .active-specialization {
-        transition: margin-right 1s, margin-left 1s;
         cursor: pointer;
-        @extend .no-select;
-        &.slide-left {
-            margin-right: 0 !important;
-            margin-left: -25%;
+        overflow: hidden;
+        margin-right: 0;
+        width: 0;
+        opacity: 0;
+        transition: margin-right 1s, width 1s, opacity 1s;
+        &.slide-open {
+            width: 13rem;
+            opacity: 1;
+            margin-right: 4%
         }
+
         .icon {
             width: 3rem;
             height: 3rem;

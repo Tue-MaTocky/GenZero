@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Skill } from '../data/skillData';
 
 @Injectable({
   providedIn: 'root'
@@ -6,6 +7,13 @@ import { Injectable } from '@angular/core';
 export class DataService {
 
   private data: any = {};
+  selectedSpecial: Skill;
+
+  resetSelectedSpecial() {
+    this.selectedSpecial = new Skill;
+    this.selectedSpecial.label = "-";
+    this.selectedSpecial.icon = "icon-lock";
+  }
 
   incr(id: string) {
     if (this.data[id] === undefined) {
@@ -35,5 +43,7 @@ export class DataService {
     delete this.data[id];
   }
   
-  constructor() { }
+  constructor() { 
+    this.resetSelectedSpecial();
+  }
 }

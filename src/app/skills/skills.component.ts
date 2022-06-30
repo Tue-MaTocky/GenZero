@@ -15,7 +15,6 @@ export class SkillsComponent implements OnInit {
   skills = skillData;
   skillView = this.skills.combat.left[0];
   specialList: Skill[] = [];
-  selectedSpecial: Skill;
 
   constructor(readonly data: DataService) { }
 
@@ -69,15 +68,13 @@ export class SkillsComponent implements OnInit {
   }
 
   toggleSpecialization() {
-    let index = this.specialList.indexOf(this.selectedSpecial);
+    let index = this.specialList.indexOf(this.data.selectedSpecial);
     index = ++index % this.specialList.length;
-    this.selectedSpecial = this.specialList[index];
+    this.data.selectedSpecial = this.specialList[index];
   }
 
   initData(clearData = false) {
-    this.selectedSpecial = new Skill;
-    this.selectedSpecial.label = "-";
-    this.selectedSpecial.icon = "icon-lock";
+    const savedSelectedSpecial = this.data.selectedSpecial;
     this.skillCount = 0;
     this.skillProgress = -1;
     this.specialList = [];
@@ -122,6 +119,10 @@ export class SkillsComponent implements OnInit {
     this.skills.tech.right.forEach(skill => {
       valid = this.initSkill(skill, valid);
     });
+
+    if (!clearData) {
+      this.data.selectedSpecial = savedSelectedSpecial;
+    }
   }
 
   private initSkill(skill: Skill, valid: boolean): boolean {
@@ -153,19 +154,17 @@ export class SkillsComponent implements OnInit {
 
   private addToSpecial(skill: Skill) {
     this.specialList.push(skill);
-    this.selectedSpecial = skill;
+    this.data.selectedSpecial = skill;
   }
 
   private removeFromSpecial(skill: Skill) {
     const index = this.specialList.indexOf(skill);
     this.specialList.splice(index, 1);
-    if (this.selectedSpecial === skill) {
+    if (this.data.selectedSpecial === skill) {
       if (this.specialList.length) {
-        this.selectedSpecial = this.specialList[0];
+        this.data.selectedSpecial = this.specialList[0];
       } else {
-        this.selectedSpecial = new Skill;
-        this.selectedSpecial.label = "-"
-        this.selectedSpecial.icon = "icon-lock";
+        this.data.resetSelectedSpecial();
       }
     }
   }

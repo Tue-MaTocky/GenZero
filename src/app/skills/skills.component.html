@@ -122,16 +122,15 @@
         </div>
     </div>
     <div class="skill-progress" fxLayout="row">
-        <div fxLayout="row" fxFlex="75%" fxLayoutAlign="center" fxLayoutGap="4%">
+        <div fxLayout="row" fxFlex="75%" fxLayoutAlign="center">
             <div class="active-specialization" fxLayout="row"
                 (click)="toggleSpecialization()"
-                [cloak]="specialList.length == 0"
-                [ngClass]="{'slide-left': specialList.length == 0}"
+                [ngClass]="{'slide-open': specialList.length != 0}"
             >
-                <div class="icon" [ngClass]="selectedSpecial.icon"></div>
+                <div class="icon" [ngClass]="data.selectedSpecial.icon"></div>
                 <div class="name" fxLayout="column">
                     <span class="title">Active Specialization</span>
-                    <span class="skill-name">{{selectedSpecial.label}}</span>
+                    <span class="skill-name">{{data.selectedSpecial.label}}</span>
                 </div>
             </div>
             <div fxFlex="0 1 auto" fxLayout="row" class="skill-bar">
