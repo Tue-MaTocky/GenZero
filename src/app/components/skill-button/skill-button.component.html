@@ -1,0 +1,13 @@
+<div class="skill-button" fxLayout="column" fxLayoutAlign="start center">
+    <div class="icon-button"
+        [class.specialization]="skill.specialization"
+        [ngClass]="skill.icon"
+        (mouseout)="onMouseOut()"
+        (mouseenter)="onUpdateView(skill)"
+        (click)="onAddSkill(skill)"
+        (rightClick)="onRemoveSkill(skill)"
+    >
+    </div>
+    <span *ngIf="!hovering" class="level-count">{{data.get(skill.id) + "/" + skill.maxLevel}}</span>
+    <span *ngIf="hovering" class="label">{{skill.label}}</span>
+</div>

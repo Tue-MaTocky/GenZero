@@ -22,15 +22,20 @@ import { GearComponent } from './gear/gear.component';
 import { RightClickDirective } from './directives/right-click.directive';
 import { CloakDirective } from './directives/cloak.directive';
 
+import { SkillButtonComponent } from './components/skill-button/skill-button.component';
+
 @NgModule({
   declarations: [
     AppComponent,
+    // Pages
     SkillsComponent,
     WeaponsComponent,
     GearComponent,
     // Directives
     RightClickDirective,
-    CloakDirective
+    CloakDirective,
+    // Components
+    SkillButtonComponent
   ],
   imports: [
     provideFirebaseApp(()=> initializeApp(environment.firebase)),

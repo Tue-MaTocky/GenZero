@@ -1,0 +1,45 @@
+$button-size: 3rem;
+:host {
+    width: 100%;
+    position: relative;
+}
+
+.skill-button {
+    width: 100%;
+    .icon-button {
+        width: 100%;
+        width: $button-size;
+        height: $button-size;
+        color: #ffffff;
+        cursor: pointer;
+    }
+    .specialization.icon-button {
+        width: $button-size + 0.35rem;
+        height: $button-size + 0.35rem;
+    }
+}
+
+.label,
+.level-count {
+    position: absolute;
+    border: 2px solid #ffffff;
+    border-radius: 3px;
+    color: #ffffff;
+    top: $button-size + 0.5rem;
+    text-align: center;
+    line-height: 1.15rem;
+    font-weight: 500;
+    background-color: #000000;
+}
+.level-count {
+    padding: 0 0.5rem;
+    z-index: 1;
+    font-size: .85rem;
+}
+.label {
+    text-transform: uppercase;
+    padding: 0 0.25rem;
+    width: max-content;
+    z-index: 2;
+    font-size: .75rem;
+}

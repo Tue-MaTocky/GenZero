@@ -1,29 +1,25 @@
 <div fxLayout="column" fxFlex="100%" class="main-content">
     <div class="main-view" fxLayout="row" fxFlex="100%">
-        <div class="skill-selection" fxLayout="row" fxFlex="75%">
+        <div class="skill-selection" fxLayout="row" fxFlex="77%">
             <div class="spacer"></div>
             <div fxLayout="column" fxFlex="25%" class="combat">
                 <h2>Combat</h2>
                 <div fxLayout="row" fxFlex="100%" class="skill-group">
                     <div fxFlex="50%" fxLayout="column" fxLayoutAlign="space-between center">
-                        <div *ngFor="let skill of skills.combat.left"
-                            class="skill-button" [ngClass]="skill.icon"
-                            (mouseenter)="updateView(skill)"
-                            (click)="addSkill(skill)"
-                            (rightClick)="removeSkill(skill)"
-                        >
-                            {{data.get(skill.id) + "/" + skill.maxLevel}}
-                        </div>
+                        <skill-button *ngFor="let skill of skills.combat.left"
+                            [skill]="skill"
+                            (updateView)="updateView(skill)"
+                            (addSkill)="addSkill(skill)"
+                            (removeSkill)="removeSkill(skill)"
+                        ></skill-button>
                     </div>
                     <div fxFlex="50%" fxLayout="column" fxLayoutAlign="space-between center">
-                        <div *ngFor="let skill of skills.combat.right"
-                            class="skill-button" [ngClass]="skill.icon"
-                            (mouseenter)="updateView(skill)"
-                            (click)="addSkill(skill)"
-                            (rightClick)="removeSkill(skill)"
-                        >
-                            {{data.get(skill.id) + "/" + skill.maxLevel}}
-                        </div>
+                        <skill-button *ngFor="let skill of skills.combat.right"
+                            [skill]="skill"
+                            (updateView)="updateView(skill)"
+                            (addSkill)="addSkill(skill)"
+                            (removeSkill)="removeSkill(skill)"
+                        ></skill-button>
                     </div>
                 </div>
             </div>
@@ -32,24 +28,20 @@
                 <h2>Support</h2>
                 <div fxLayout="row" fxFlex="100%" class="skill-group">
                     <div fxFlex="50%" fxLayout="column" fxLayoutAlign="space-between center">
-                        <div *ngFor="let skill of skills.support.left"
-                            class="skill-button" [ngClass]="skill.icon"
-                            (mouseenter)="updateView(skill)"
-                            (click)="addSkill(skill)"
-                            (rightClick)="removeSkill(skill)"
-                        >
-                            {{data.get(skill.id) + "/" + skill.maxLevel}}
-                        </div>
+                        <skill-button *ngFor="let skill of skills.support.left"
+                            [skill]="skill"
+                            (updateView)="updateView(skill)"
+                            (addSkill)="addSkill(skill)"
+                            (removeSkill)="removeSkill(skill)"
+                        ></skill-button>
                     </div>
                     <div fxFlex="50%" fxLayout="column" fxLayoutAlign="space-between center">
-                        <div *ngFor="let skill of skills.support.right"
-                            class="skill-button" [ngClass]="skill.icon"
-                            (mouseenter)="updateView(skill)"
-                            (click)="addSkill(skill)"
-                            (rightClick)="removeSkill(skill)"
-                        >
-                            {{data.get(skill.id) + "/" + skill.maxLevel}}
-                        </div>
+                        <skill-button *ngFor="let skill of skills.support.right"
+                            [skill]="skill"
+                            (updateView)="updateView(skill)"
+                            (addSkill)="addSkill(skill)"
+                            (removeSkill)="removeSkill(skill)"
+                        ></skill-button>
                     </div>
                 </div>
             </div>
@@ -58,24 +50,20 @@
                 <h2>Survial</h2>
                 <div fxLayout="row" fxFlex="100%" class="skill-group">
                     <div fxFlex="50%" fxLayout="column" fxLayoutAlign="space-between center">
-                        <div *ngFor="let skill of skills.survival.left"
-                            class="skill-button" [ngClass]="skill.icon"
-                            (mouseenter)="updateView(skill)"
-                            (click)="addSkill(skill)"
-                            (rightClick)="removeSkill(skill)"
-                        >
-                            {{data.get(skill.id) + "/" + skill.maxLevel}}
-                        </div>
+                        <skill-button *ngFor="let skill of skills.survival.left"
+                            [skill]="skill"
+                            (updateView)="updateView(skill)"
+                            (addSkill)="addSkill(skill)"
+                            (removeSkill)="removeSkill(skill)"
+                        ></skill-button>
                     </div>
                     <div fxFlex="50%" fxLayout="column" fxLayoutAlign="space-between center">
-                        <div *ngFor="let skill of skills.survival.right"
-                            class="skill-button" [ngClass]="skill.icon"
-                            (mouseenter)="updateView(skill)"
-                            (click)="addSkill(skill)"
-                            (rightClick)="removeSkill(skill)"
-                        >
-                            {{data.get(skill.id) + "/" + skill.maxLevel}}
-                        </div>
+                        <skill-button *ngFor="let skill of skills.survival.right"
+                            [skill]="skill"
+                            (updateView)="updateView(skill)"
+                            (addSkill)="addSkill(skill)"
+                            (removeSkill)="removeSkill(skill)"
+                        ></skill-button>
                     </div>
                 </div>
             </div>
@@ -84,30 +72,26 @@
                 <h2>Tech</h2>
                 <div fxLayout="row" fxFlex="100%" class="skill-group">
                     <div fxFlex="50%" fxLayout="column" fxLayoutAlign="space-between center">
-                        <div *ngFor="let skill of skills.tech.left"
-                            class="skill-button" [ngClass]="skill.icon"
-                            (mouseenter)="updateView(skill)"
-                            (click)="addSkill(skill)"
-                            (rightClick)="removeSkill(skill)"
-                        >
-                            {{data.get(skill.id) + "/" + skill.maxLevel}}
-                        </div>
+                        <skill-button *ngFor="let skill of skills.tech.left"
+                            [skill]="skill"
+                            (updateView)="updateView(skill)"
+                            (addSkill)="addSkill(skill)"
+                            (removeSkill)="removeSkill(skill)"
+                        ></skill-button>
                     </div>
                     <div fxFlex="50%" fxLayout="column" fxLayoutAlign="space-between center">
-                        <div *ngFor="let skill of skills.tech.right"
-                            class="skill-button" [ngClass]="skill.icon"
-                            (mouseenter)="updateView(skill)"
-                            (click)="addSkill(skill)"
-                            (rightClick)="removeSkill(skill)"
-                        >
-                            {{data.get(skill.id) + "/" + skill.maxLevel}}
-                        </div>
+                        <skill-button *ngFor="let skill of skills.tech.right"
+                            [skill]="skill"
+                            (updateView)="updateView(skill)"
+                            (addSkill)="addSkill(skill)"
+                            (removeSkill)="removeSkill(skill)"
+                        ></skill-button>
                     </div>
                 </div>
             </div>
             <div class="spacer"></div>
         </div>
-        <div class="skill-details" fxLayout="column" fxFlex="25%">
+        <div class="skill-details" fxLayout="column" fxFlex="23%">
             <h2>{{skillView.label}}</h2>
             <div class="skill-count" fxLayout="row">
                 <span [class.highlight]="data.get(skillView.id) >= 1"><i></i></span>
@@ -122,7 +106,7 @@
         </div>
     </div>
     <div class="skill-progress" fxLayout="row">
-        <div fxLayout="row" fxFlex="75%" fxLayoutAlign="center">
+        <div fxLayout="row" fxFlex="77%" fxLayoutAlign="center">
             <div class="active-specialization" fxLayout="row"
                 (click)="toggleSpecialization()"
                 [ngClass]="{'slide-open': specialList.length != 0}"
@@ -140,7 +124,7 @@
                 </div>
             </div>
         </div>
-        <div class="reset-button" fxLayout="row" fxFlex="25%">
+        <div class="reset-button" fxLayout="row" fxFlex="23%">
             <button mat-button fxFlex="100%" (click)="initData(true)">Reset Skills</button>
         </div>
     </div>
