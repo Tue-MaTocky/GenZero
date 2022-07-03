@@ -7,7 +7,7 @@
                 <div fxLayout="row" fxFlex="100%" class="skill-group">
                     <div fxFlex="50%" fxLayout="column" fxLayoutAlign="space-between center">
                         <div *ngFor="let skill of skills.combat.left"
-                            class="skill-button"
+                            class="skill-button" [ngClass]="skill.icon"
                             (mouseenter)="updateView(skill)"
                             (click)="addSkill(skill)"
                             (rightClick)="removeSkill(skill)"
@@ -17,7 +17,7 @@
                     </div>
                     <div fxFlex="50%" fxLayout="column" fxLayoutAlign="space-between center">
                         <div *ngFor="let skill of skills.combat.right"
-                            class="skill-button"
+                            class="skill-button" [ngClass]="skill.icon"
                             (mouseenter)="updateView(skill)"
                             (click)="addSkill(skill)"
                             (rightClick)="removeSkill(skill)"
@@ -33,7 +33,7 @@
                 <div fxLayout="row" fxFlex="100%" class="skill-group">
                     <div fxFlex="50%" fxLayout="column" fxLayoutAlign="space-between center">
                         <div *ngFor="let skill of skills.support.left"
-                            class="skill-button"
+                            class="skill-button" [ngClass]="skill.icon"
                             (mouseenter)="updateView(skill)"
                             (click)="addSkill(skill)"
                             (rightClick)="removeSkill(skill)"
@@ -43,7 +43,7 @@
                     </div>
                     <div fxFlex="50%" fxLayout="column" fxLayoutAlign="space-between center">
                         <div *ngFor="let skill of skills.support.right"
-                            class="skill-button"
+                            class="skill-button" [ngClass]="skill.icon"
                             (mouseenter)="updateView(skill)"
                             (click)="addSkill(skill)"
                             (rightClick)="removeSkill(skill)"
@@ -59,7 +59,7 @@
                 <div fxLayout="row" fxFlex="100%" class="skill-group">
                     <div fxFlex="50%" fxLayout="column" fxLayoutAlign="space-between center">
                         <div *ngFor="let skill of skills.survival.left"
-                            class="skill-button"
+                            class="skill-button" [ngClass]="skill.icon"
                             (mouseenter)="updateView(skill)"
                             (click)="addSkill(skill)"
                             (rightClick)="removeSkill(skill)"
@@ -69,7 +69,7 @@
                     </div>
                     <div fxFlex="50%" fxLayout="column" fxLayoutAlign="space-between center">
                         <div *ngFor="let skill of skills.survival.right"
-                            class="skill-button"
+                            class="skill-button" [ngClass]="skill.icon"
                             (mouseenter)="updateView(skill)"
                             (click)="addSkill(skill)"
                             (rightClick)="removeSkill(skill)"
@@ -85,7 +85,7 @@
                 <div fxLayout="row" fxFlex="100%" class="skill-group">
                     <div fxFlex="50%" fxLayout="column" fxLayoutAlign="space-between center">
                         <div *ngFor="let skill of skills.tech.left"
-                            class="skill-button"
+                            class="skill-button" [ngClass]="skill.icon"
                             (mouseenter)="updateView(skill)"
                             (click)="addSkill(skill)"
                             (rightClick)="removeSkill(skill)"
@@ -95,7 +95,7 @@
                     </div>
                     <div fxFlex="50%" fxLayout="column" fxLayoutAlign="space-between center">
                         <div *ngFor="let skill of skills.tech.right"
-                            class="skill-button"
+                            class="skill-button" [ngClass]="skill.icon"
                             (mouseenter)="updateView(skill)"
                             (click)="addSkill(skill)"
                             (rightClick)="removeSkill(skill)"

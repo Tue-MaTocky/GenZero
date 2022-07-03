@@ -58,11 +58,9 @@ $skill-column-gap: 0.5rem;
             opacity: 1;
             margin-right: 4%
         }
-
         .icon {
             width: 3rem;
             height: 3rem;
-            background-color: lime;
         }
         .name {
             margin: auto 0;
@@ -136,10 +134,8 @@ $skill-column-gap: 0.5rem;
         .skill-button {
             width: 3rem;
             height: 3rem;
-            background-color: lime;
+            color: #ffffff;
             cursor: pointer;
-            // margin: 20px 20px;
-            @extend .no-select;
         }
     }
     h2 {
