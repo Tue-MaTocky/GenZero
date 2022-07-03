@@ -8,6 +8,8 @@
         (rightClick)="onRightClick(skill)"
     >
     </div>
-    <span *ngIf="!hovering" class="level-count">{{data.get(skill.id) + "/" + skill.maxLevel}}</span>
-    <span *ngIf="hovering" class="label">{{skill.label}}</span>
+    <span class="level-count" [class.hover]="hovering" fxLayout="column" fxLayoutAlign="start center">
+        <span>{{data.get(skill.id) + "/" + skill.maxLevel}}</span>
+        <span class="label">{{skill.label}}</span>
+    </span>
 </div>

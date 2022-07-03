@@ -25,27 +25,41 @@ $button-size: 3rem;
     }
 }
 
-.label,
 .level-count {
+    text-transform: uppercase;
+    width: max-content;
     position: absolute;
     border: 2px solid #ffffff;
     border-radius: 3px;
     color: #ffffff;
     top: $button-size + 0.5rem;
     text-align: center;
-    line-height: 1.15rem;
     font-weight: 500;
     background-color: #000000;
-}
-.level-count {
-    padding: 0 0.5rem;
-    z-index: 1;
-    font-size: .85rem;
-}
-.label {
-    text-transform: uppercase;
     padding: 0 0.25rem;
-    width: max-content;
-    z-index: 2;
-    font-size: .75rem;
+    font-size: 0.75rem;
+
+    transition: max-width 0.25s ease-in-out;
+    max-width: 2.35rem;
+
+    &.hover {
+        max-width: 175%;
+        z-index: 1;
+        .label {
+            max-width: 175%;
+            line-height: 1rem;
+        }
+    }
+    span {
+        padding: 0 .25rem;
+    }
+    .label {
+        transition: max-width 1s;
+        line-height: 0;
+        max-width: 0;
+        padding: 0;
+        font-size: 0.75rem;
+        white-space: nowrap;
+        overflow: hidden;
+    }
 }
