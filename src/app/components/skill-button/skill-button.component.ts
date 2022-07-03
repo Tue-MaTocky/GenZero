@@ -22,15 +22,15 @@ export class SkillButtonComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  onAddSkill(skill: Skill): void {
+  onClick(skill: Skill): void {
     this.addSkill.emit(skill);
   }
 
-  onRemoveSkill(skill: Skill): void {
+  onRightClick(skill: Skill): void {
     this.removeSkill.emit(skill);
   }
 
-  onUpdateView(skill: Skill) {
+  onMouseEnter(skill: Skill) {
     this.hovering = true;
     this.updateView.emit(skill);
   }

@@ -3,9 +3,9 @@
         [class.specialization]="skill.specialization"
         [ngClass]="skill.icon"
         (mouseout)="onMouseOut()"
-        (mouseenter)="onUpdateView(skill)"
-        (click)="onAddSkill(skill)"
-        (rightClick)="onRemoveSkill(skill)"
+        (mouseenter)="onMouseEnter(skill)"
+        (click)="onClick(skill)"
+        (rightClick)="onRightClick(skill)"
     >
     </div>
     <span *ngIf="!hovering" class="level-count">{{data.get(skill.id) + "/" + skill.maxLevel}}</span>
