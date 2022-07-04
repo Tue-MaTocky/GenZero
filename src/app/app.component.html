@@ -4,6 +4,14 @@
       <span class="skill-button"><span><span><span><button mat-button [routerLink]="'\gen-zero/skills'" routerLinkActive="active">Skills</button></span></span></span></span>
       <span class="weapon-button"><span><span><span><button mat-button [routerLink]="'\gen-zero/weapons'" routerLinkActive="active">Weapons</button></span></span></span></span>
       <span class="gear-button"><span><span><span><button mat-button [routerLink]="'\gen-zero/gear'" routerLinkActive="active">Profile</button></span></span></span></span>
+      <div class="share-links">
+        <button mat-icon-button
+          matTooltip="Link to this build"
+          (click)="data.createLink()"
+        >
+          <mat-icon>share</mat-icon>
+        </button>
+      </div>
     </div>
   </div>
   <div fxLayout="row" fxLayoutAlign="center" id="Main_Content_Wrap" >

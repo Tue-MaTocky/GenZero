@@ -14,6 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { MatButtonModule } from "@angular/material/button";
+import {MatIconModule} from '@angular/material/icon';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 import { SkillsComponent } from './skills/skills.component';
 import { WeaponsComponent } from './weapons/weapons.component';
@@ -45,7 +47,9 @@ import { SkillButtonComponent } from './components/skill-button/skill-button.com
     AppRoutingModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule,
+    MatTooltipModule
   ],
   providers: [
     // ScreenTrackingService

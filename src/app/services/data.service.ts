@@ -6,9 +6,34 @@ import { Skill } from '../data/skillData';
 })
 export class DataService {
 
+  private readonly StringDataList = ["sss"];
+
   private data: any = {};
-  selectedSpecial: Skill;
+  private _selectedSpecial: Skill
+
   maxSkillsReached: boolean = false;
+
+  constructor() { 
+    this.resetSelectedSpecial();
+  }
+
+  set selectedSpecial(value: Skill) {
+    this._selectedSpecial = value;
+    if (value.id) {
+      this.data.sss = value.id;
+    } else {
+      this.clear('sss');
+    }
+  }
+
+  get selectedSpecial(): Skill {
+    return this._selectedSpecial;
+  }
+
+  createLink() {
+    const dataCode = this.constructDataCode();
+    this.extractDataCode(dataCode);
+  }
 
   resetSelectedSpecial() {
     this.selectedSpecial = new Skill;
@@ -44,7 +69,27 @@ export class DataService {
     delete this.data[id];
   }
   
-  constructor() { 
-    this.resetSelectedSpecial();
+  private constructDataCode(): string {
+    let dataStr = JSON.stringify(this.data);
+    dataStr = dataStr.replace(/[{}"]/g, "");
+    dataStr = dataStr.replace(/:/g, "-");
+    dataStr = dataStr.replace(/,/g, "~");
+
+    return dataStr;
+  }
+
+  private extractDataCode(code: string): void {
+    let dataCode = "";
+    const codeNodes =code.split("~");
+    codeNodes.forEach(node => {
+      const dNode = node.split("-");
+      dataCode = dataCode.concat(`"${dNode[0]}":${this.dataString(dNode)},`);
+    });
+    dataCode = `{${dataCode.slice(0, -1)}}`;
+    this.data = JSON.parse(dataCode);
+  }
+
+  private dataString(dataNode: string[]): string {
+    return this.StringDataList.indexOf(dataNode[0]) != -1 ? `"${dataNode[1]}"` : dataNode[1];
   }
 }
