@@ -1,4 +1,12 @@
 <div fxLayout="column" id="App_Content_Wrap">
+  <div class="copy-box" [class.show]="data.showCopyBox">
+    <div class="flyout">
+      <button mat-icon-button (click)="loadCopyBox()"><mat-icon>close</mat-icon></button>
+      <h2>The link to this build</h2>
+      <input #copyBox type="text" (click)="this.copyBox.select()">
+    </div>
+    <div class="overlay" (click)="loadCopyBox()"></div>
+  </div>
   <div fxLayout="row" fxLayoutAlign="center" id="Header">
     <div fxLayout="row" id="Header_Content" [ngClass]="headerCssClass">
       <span class="skill-button"><span><span><span><button mat-button [routerLink]="'\gen-zero/skills'" routerLinkActive="active">Skills</button></span></span></span></span>

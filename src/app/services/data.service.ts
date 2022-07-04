@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ElementRef } from '@angular/core';
 import { Skill } from '../data/skillData';
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,9 @@ export class DataService {
   private _selectedSpecial: Skill
 
   maxSkillsReached: boolean = false;
+  copyBox: ElementRef;
+  showCopyBox: boolean = false;
+  url: string = "";
 
   constructor() { 
     this.resetSelectedSpecial();
@@ -32,7 +36,8 @@ export class DataService {
 
   createLink() {
     const dataCode = this.constructDataCode();
-    this.extractDataCode(dataCode);
+    this.copyToClipBoard(dataCode);
+    // this.extractDataCode(dataCode);
   }
 
   resetSelectedSpecial() {
@@ -91,5 +96,16 @@ export class DataService {
 
   private dataString(dataNode: string[]): string {
     return this.StringDataList.indexOf(dataNode[0]) != -1 ? `"${dataNode[1]}"` : dataNode[1];
+  }
+
+  private copyToClipBoard(value: string) {
+    this.url = `${window.location.origin}/gen-zero/${value}`;
+    this.showCopyBox = true;
+    const el = this.copyBox.nativeElement;
+    el.value = this.url;
+    el.setAttribute('readonly', '');
+    el.focus();
+    el.select();
+    document.execCommand('copy');
   }
 }
