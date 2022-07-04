@@ -8,6 +8,7 @@ export class DataService {
 
   private data: any = {};
   selectedSpecial: Skill;
+  maxSkillsReached: boolean = false;
 
   resetSelectedSpecial() {
     this.selectedSpecial = new Skill;

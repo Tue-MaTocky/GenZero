@@ -29,7 +29,7 @@ export class SkillsComponent implements OnInit {
 
     this.data.incr(skill.id);
     this.skillCount++;
-    this.skillProgress = (this.skillCount - 1) / this.MaxSkill;
+    this.calcProgress();
 
     if(skill.specialization) {
       this.addToSpecial(skill);
@@ -43,14 +43,24 @@ export class SkillsComponent implements OnInit {
 
     this.data.decr(skill.id);
     this.skillCount--;
-    this.skillProgress = (this.skillCount - 1) / this.MaxSkill;
+    this.calcProgress();
 
     if(skill.specialization) {
       this.removeFromSpecial(skill);
     }
   }
 
-  updateView(skill: Skill) {
+  calcProgress(): void {
+    if (this.skillCount === this.MaxSkill) {
+      this.data.maxSkillsReached = true;
+      this.skillProgress = 1
+      return;
+    }
+    this.data.maxSkillsReached = false;
+    this.skillProgress = (this.skillCount - 1) / this.MaxSkill;
+  }
+
+  updateView(skill: Skill): void {
     this.skillView = skill;
   }
 
@@ -67,13 +77,13 @@ export class SkillsComponent implements OnInit {
     return `/assets/img/skills_main_img/${file}`;
   }
 
-  toggleSpecialization() {
+  toggleSpecialization(): void {
     let index = this.specialList.indexOf(this.data.selectedSpecial);
     index = ++index % this.specialList.length;
     this.data.selectedSpecial = this.specialList[index];
   }
 
-  initData(clearData = false) {
+  initData(clearData = false): void {
     const savedSelectedSpecial = this.data.selectedSpecial;
     this.skillCount = 0;
     this.skillProgress = -1;
@@ -144,7 +154,7 @@ export class SkillsComponent implements OnInit {
     }
 
     this.skillCount += current;
-    this.skillProgress = (this.skillCount - 1) / this.MaxSkill;
+    this.calcProgress();
 
     if(skill.specialization && current) {
       this.addToSpecial(skill);
@@ -152,12 +162,12 @@ export class SkillsComponent implements OnInit {
     return true;
   }
 
-  private addToSpecial(skill: Skill) {
+  private addToSpecial(skill: Skill): void {
     this.specialList.push(skill);
     this.data.selectedSpecial = skill;
   }
 
-  private removeFromSpecial(skill: Skill) {
+  private removeFromSpecial(skill: Skill): void {
     const index = this.specialList.indexOf(skill);
     this.specialList.splice(index, 1);
     if (this.data.selectedSpecial === skill) {

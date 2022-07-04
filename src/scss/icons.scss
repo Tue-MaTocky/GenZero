@@ -248,12 +248,13 @@
     }
 
     // Lock Icons
-    .icon-lock {
+    .icon-lock:not(.specialization) {
         background-image: url('../assets/icon/lock.svg');
         background-size: cover;
+        border-radius: 100%;
     }
 
-    .icon-specialization-lock {
+    .specialization.icon-lock {
         background-image: url('../assets/icon/specialization_lock.svg');
         background-size: cover;
     }

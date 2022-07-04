@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, HostBinding } from '@angular/core';
 import { Skill } from '../../data/skillData';
 import { DataService } from '../../services/data.service';
 
@@ -18,9 +18,13 @@ export class SkillButtonComponent implements OnInit {
   @Output() removeSkill = new EventEmitter();
   @Output() updateView = new EventEmitter();
 
+  @HostBinding('style.height') compHeight = '';
+
   constructor(readonly data: DataService) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+    if(!this.skill.specialization) { this.compHeight = '100%'; }
+  }
 
   onClick(skill: Skill): void {
     this.addSkill.emit(skill);
@@ -37,5 +41,21 @@ export class SkillButtonComponent implements OnInit {
 
   onMouseOut() {
     this.hovering = false;
+  }
+
+  get lockSkill(): boolean {
+    return this.skill.prerequisite !== "" && this.data.get(this.skill.prerequisite) <= 0;
+  }
+
+  get powerUp(): {'power-up': boolean} {
+    return {'power-up': this.data.get(this.skill.dependent) > 0};
+  }
+
+  get levelMaxed(): {'level-capped': boolean} {
+    return {'level-capped': this.data.maxSkillsReached && this.data.get(this.skill.id) <= 0};
+  }
+
+  get clockLabel(): boolean {
+    return (this.lockSkill || this.data.maxSkillsReached && this.data.get(this.skill.id) <= 0) && !this.hovering;
   }
 }

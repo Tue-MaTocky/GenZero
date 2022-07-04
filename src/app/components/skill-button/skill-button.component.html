@@ -1,15 +1,15 @@
-<div class="skill-button" fxLayout="column" fxLayoutAlign="start center">
+<div class="skill-button" [ngClass]="levelMaxed" fxLayout="column" fxLayoutAlign="start center">
     <div class="icon-button"
         [class.specialization]="skill.specialization"
-        [ngClass]="skill.icon"
+        [ngClass]="lockSkill ? 'icon-lock' : skill.icon"
         (mouseout)="onMouseOut()"
         (mouseenter)="onMouseEnter(skill)"
         (click)="onClick(skill)"
         (rightClick)="onRightClick(skill)"
-    >
-    </div>
-    <span class="level-count" [class.hover]="hovering" fxLayout="column" fxLayoutAlign="start center">
-        <span>{{data.get(skill.id) + "/" + skill.maxLevel}}</span>
+    ></div>
+    <span class="level-count" [cloak]="clockLabel" [class.hover]="hovering" fxLayout="column" fxLayoutAlign="start center">
+        <span *ngIf="!lockSkill">{{data.get(skill.id) + "/" + skill.maxLevel}}</span>
         <span class="label">{{skill.label}}</span>
     </span>
 </div>
+<div *ngIf="!skill.specialization" class="power-bar" [ngClass]="powerUp"><div></div></div>
