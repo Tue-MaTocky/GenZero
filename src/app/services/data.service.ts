@@ -1,5 +1,5 @@
 import { Injectable, ElementRef } from '@angular/core';
-import { Skill } from '../data/skillData';
+import { skillData, Skill } from '../data/skillData';
 
 
 @Injectable({
@@ -8,6 +8,7 @@ import { Skill } from '../data/skillData';
 export class DataService {
 
   private readonly StringDataList = ["sss"];
+  private readonly skills = skillData;
 
   private data: any = {};
   private _selectedSpecial: Skill
@@ -34,19 +35,19 @@ export class DataService {
     return this._selectedSpecial;
   }
 
-  createLink() {
+  createLink(): void {
     const dataCode = this.constructDataCode();
     this.copyToClipBoard(dataCode);
     // this.extractDataCode(dataCode);
   }
 
-  resetSelectedSpecial() {
+  resetSelectedSpecial(): void {
     this.selectedSpecial = new Skill;
     this.selectedSpecial.label = "-";
     this.selectedSpecial.icon = "icon-lock";
   }
 
-  incr(id: string) {
+  incr(id: string): void {
     if (this.data[id] === undefined) {
       this.data[id] = 1;
       return;
@@ -54,7 +55,7 @@ export class DataService {
     this.data[id]++;
   }
 
-  decr(id: string) {
+  decr(id: string): void {
     if (this.data[id] === 1) {
       this.clear(id);
       return;
@@ -62,7 +63,7 @@ export class DataService {
     this.data[id]--;
   }
 
-  set(id: string, value: number) {
+  set(id: string, value: number): void {
     this.data[id] = value;
   }
 
@@ -70,10 +71,16 @@ export class DataService {
     return this.data[id] === undefined ? 0 : this.data[id];
   }
 
-  clear(id: string) {
+  clear(id: string): void {
     delete this.data[id];
   }
   
+  updateCodeData(codeData: string): void {
+    if (!codeData) { return; }
+    this.extractDataCode(codeData);
+    this.updateSpecialization();
+  }
+
   private constructDataCode(): string {
     let dataStr = JSON.stringify(this.data);
     dataStr = dataStr.replace(/[{}"]/g, "");
@@ -88,7 +95,9 @@ export class DataService {
     const codeNodes =code.split("~");
     codeNodes.forEach(node => {
       const dNode = node.split("-");
-      dataCode = dataCode.concat(`"${dNode[0]}":${this.dataString(dNode)},`);
+      if (dNode.length == 2){
+        dataCode = dataCode.concat(`"${dNode[0]}":${this.dataString(dNode)},`);
+      }
     });
     dataCode = `{${dataCode.slice(0, -1)}}`;
     this.data = JSON.parse(dataCode);
@@ -98,8 +107,42 @@ export class DataService {
     return this.StringDataList.indexOf(dataNode[0]) != -1 ? `"${dataNode[1]}"` : dataNode[1];
   }
 
+  private updateSpecialization() {
+    const id = this.data.sss;
+    if(!id) { return; }
+
+    switch (id) {
+      case 'sa5':
+        this._selectedSpecial = this.skills.combat.left[5];
+        break;
+      case 'sb5':
+        this._selectedSpecial = this.skills.combat.right[5];
+        break;
+      case 'sc5':
+        this._selectedSpecial = this.skills.support.left[5];
+        break;
+      case 'sd5':
+        this._selectedSpecial = this.skills.support.right[5];
+        break;
+      case 'se5':
+        this._selectedSpecial = this.skills.survival.left[5];
+        break;
+      case 'sf5':
+        this._selectedSpecial = this.skills.survival.right[5];
+        break;
+      case 'sg5':
+        this._selectedSpecial = this.skills.tech.left[5];
+        break;
+      case 'sh5':
+        this._selectedSpecial = this.skills.tech.right[5];
+        break;
+      default:
+        this.resetSelectedSpecial();
+    }
+  }
+
   private copyToClipBoard(value: string) {
-    this.url = `${window.location.origin}/gen-zero/${value}`;
+    this.url = `${window.location.origin}/gen-zero/skills/${value}`;
     this.showCopyBox = true;
     const el = this.copyBox.nativeElement;
     el.value = this.url;

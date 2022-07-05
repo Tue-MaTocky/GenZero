@@ -28,7 +28,8 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
-        this.headerCssClass = this.cssClassMap.get(this.router.url);
+        const url = this.router.url.indexOf("/gen-zero/skills") !== -1 ? "/gen-zero/skills" : this.router.url;
+        this.headerCssClass = this.cssClassMap.get(url);
       }
     });
   }
@@ -39,6 +40,6 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   loadCopyBox() {
     this.data.showCopyBox = false;
-//    window.location.href = this.data.url
+    window.location.href = this.data.url
   }
 }

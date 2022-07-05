@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Skill, skillData } from '../data/skillData';
 import { DataService } from '../services/data.service';
 
@@ -16,9 +17,13 @@ export class SkillsComponent implements OnInit {
   skillView = this.skills.combat.left[0];
   specialList: Skill[] = [];
 
-  constructor(readonly data: DataService) { }
+  constructor(
+    readonly data: DataService,
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    const codeData = this.route.snapshot.paramMap.get('codeData');
+    this.data.updateCodeData(codeData);
     this.initData();
   }
 
@@ -132,6 +137,8 @@ export class SkillsComponent implements OnInit {
 
     if (!clearData) {
       this.data.selectedSpecial = savedSelectedSpecial;
+    } else {
+      this.data.clear('sss');
     }
   }
 

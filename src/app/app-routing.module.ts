@@ -8,6 +8,7 @@ const routes: Routes = [{
   path: 'gen-zero',
   children: [
   { path: 'skills', component: SkillsComponent },
+  { path: 'skills/:codeData', component: SkillsComponent },
   { path: 'weapons', component: WeaponsComponent },
   { path: 'gear', component: GearComponent },
   { path: '', redirectTo: 'gen-zero/skills', pathMatch: 'full' },
