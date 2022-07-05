@@ -1,0 +1,22 @@
+:host {
+    position: relative;
+    background-image: url(/assets/img/weapons_bg.jpg);
+    background-color: #141718;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-position-x: center;
+    background-size: cover;
+}
+
+h2 {
+    color: #ffffff;
+    font-size: 4rem;
+    font-weight: 100;
+    position: absolute;
+    bottom: 5%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    width: fit-content;
+    text-transform: capitalize;
+}

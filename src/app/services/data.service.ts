@@ -17,6 +17,7 @@ export class DataService {
   copyBox: ElementRef;
   showCopyBox: boolean = false;
   url: string = "";
+  codeData: string = "";
 
   constructor() { 
     this.resetSelectedSpecial();
@@ -77,6 +78,7 @@ export class DataService {
   
   updateCodeData(codeData: string): void {
     if (!codeData) { return; }
+    this.codeData = codeData;
     this.extractDataCode(codeData);
     this.updateSpecialization();
   }

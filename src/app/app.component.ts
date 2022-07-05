@@ -28,7 +28,8 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
-        const url = this.router.url.indexOf("/gen-zero/skills") !== -1 ? "/gen-zero/skills" : this.router.url;
+        let url = this.router.url.indexOf("/gen-zero/skills") !== -1 ? "/gen-zero/skills" : this.router.url;
+        url = this.router.url.indexOf("/gen-zero/weapons") !== -1 ? "/gen-zero/weapons" : url;
         this.headerCssClass = this.cssClassMap.get(url);
       }
     });
