@@ -78,7 +78,7 @@ export class DataService {
   
   updateCodeData(codeData: string): void {
     if (!codeData) { return; }
-    this.codeData = codeData;
+    setTimeout(()=> { this.codeData = codeData; }, 0);
     this.extractDataCode(codeData);
     this.updateSpecialization();
   }
@@ -144,6 +144,7 @@ export class DataService {
   }
 
   private copyToClipBoard(value: string) {
+    console.log(window.location);
     this.url = `${window.location.origin}/gen-zero/skills/${value}`;
     this.showCopyBox = true;
     const el = this.copyBox.nativeElement;
