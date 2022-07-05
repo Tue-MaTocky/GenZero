@@ -9,10 +9,12 @@
   </div>
   <div fxLayout="row" fxLayoutAlign="center" id="Header">
     <div fxLayout="row" id="Header_Content" [ngClass]="headerCssClass">
-      <span class="skill-button"><span><span><span><button mat-button [routerLink]="['\gen-zero/skills', data.codeData]" routerLinkActive="active">Skills</button></span></span></span></span>
-      <span class="weapon-button"><span><span><span><button mat-button [routerLink]="['\gen-zero/weapons', data.codeData]" routerLinkActive="active">Weapons</button></span></span></span></span>
-      <!-- <span class="gear-button"><span><span><span><button mat-button [routerLink]="'\gen-zero/gear'" routerLinkActive="active">Profile</button></span></span></span></span> -->
-      <div class="share-links">
+      <div class="nav-buttons" fxLayout="row">
+        <span class="skill-button"><span><span><span><button mat-button [routerLink]="['\gen-zero/skills', data.codeData]" routerLinkActive="active">Skills</button></span></span></span></span>
+        <span class="weapon-button"><span><span><span><button mat-button [routerLink]="['\gen-zero/weapons', data.codeData]" routerLinkActive="active">Weapons</button></span></span></span></span>
+        <!-- <span class="gear-button"><span><span><span><button mat-button [routerLink]="'\gen-zero/gear'" routerLinkActive="active">Profile</button></span></span></span></span> -->
+      </div>
+      <div class="share-links" fxLayout="row">
         <button mat-icon-button
           matTooltip="Link to this build"
           (click)="data.createLink()"

@@ -1,0 +1,44 @@
+@mixin material-styles($spec: ()) {
+    @include material-button($spec);
+    @include material-icon($spec);
+}
+
+@mixin material-button($spec: ()) {
+    $spec: map-merge(
+        (), 
+        $spec
+    );
+
+    .mat-button,
+    .mat-icon-button,
+    .mat-stroked-button,
+    .mat-flat-button {
+        min-width: 4rem;
+        line-height: 2.25em;
+        font-size: 0.875rem;
+        padding: 0 1em;
+        border-radius: 0.25em;
+    }
+}
+
+@mixin material-icon($spec: ()) {
+    $spec: map-merge(
+        (), 
+        $spec
+    );
+
+    .mat-icon-button {
+        i, 
+        .mat-icon {
+            line-height: 1.5rem;
+        }
+    }
+
+    .mat-icon {
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+    .material-icons {
+        font-size: 1.5rem;
+    }
+}

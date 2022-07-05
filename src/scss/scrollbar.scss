@@ -1,0 +1,39 @@
+@mixin scrollbar-styles($spec: ()) {
+    $spec: map-merge(
+        (
+            "size": .25rem,
+            "foreground-color": #ffffff,
+            "background-color": #333333,
+            "thumb-radius": 0.3125rem,
+            "thumb-shadow": 0 0 0.1875rem #888888
+        ), 
+        $spec
+    );
+
+    $size: map-get($spec, "size");
+    $foreground-color: map-get($spec, "foreground-color");
+    $background-color: map-get($spec, "background-color");
+    $thumb-radius: map-get($spec, "thumb-radius");
+    $thumb-shadow: map-get($spec, "thumb-shadow");
+
+    * {
+        // For Chrome & Safari
+        ::-webkit-scrollbar {
+            width: $size;
+            height: $size;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: $foreground-color;
+            border-radius: $thumb-radius;
+            box-shadow: $thumb-shadow;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: $background-color;
+        }
+
+        // Standard version (Firefox only for now)
+        scrollbar-color: $foreground-color $background-color;
+    }
+}

@@ -6,19 +6,25 @@
         $spec
     );
 
+    .nav-buttons,
+    .share-links {
+        color: #ffffff;
+    }
+
+    .nav-buttons {
     // &.skill-page,
     // &.weapon-page,
     // &.gear-page {
         @include button-style();
         button {
-            color: #ffffff;
             border-radius: 0;
             text-transform: uppercase;
-            font-size: 20px;
-            padding: 0 5px;
+            font-size: 1.25rem;
+            padding: 0 0.3125rem;
             font-weight: 100;
         }
     // }
+    }
 
     &.skill-page {
         background-color: c.$header-skill-color;
@@ -68,8 +74,10 @@
         border: 0 solid rgba(198,197,190,0.3);
         border-style: solid;
         border-color: transparent;
-        border-width: 0 3px 0;
-        padding: 0 2px;
+        border-width: 0 0.1875rem 0;
+        padding: 0 0.125rem;
         display: flex;
+        font-size: 0.875em;
+        line-height: 1.25rem;
     }
 }

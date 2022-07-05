@@ -6,15 +6,15 @@
         $spec
     );
 
-    $header-height: 50px;
-    $content-width: 1400px;
+    $header-height: 3.125rem;
+    $content-width: 87.5rem;
 
-    html {
+    // html {
         font-size: 16px;
         font-weight: 400;
         font-family: Reboto, "Helvetica Neue", sans-serif;
-    }
-    html,
+    // }
+    &,
     body,
     #App_Content_Wrap {
         height: 100vh;
@@ -61,7 +61,7 @@
                 box-sizing: border-box;
                 display: flex;
                 flex: 0 1 100%;
-                // max-height: calc(100% - 100px);
+                // max-height: calc(100% - 6.25rem);
                 max-height: 100%;
             }
         }

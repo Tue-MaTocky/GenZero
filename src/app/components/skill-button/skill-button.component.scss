@@ -2,6 +2,7 @@ $power-bar-color: #17F018;
 $button-size: 3rem;
 :host {
     width: 100%;
+    min-height: 6rem;
     position: relative;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -40,7 +41,7 @@ $button-size: 3rem;
             background-color: #222222;
             &.specialization {
                 &:not(.icon-lock) {
-                    border: 2px solid #000000;
+                    border: 0.125rem solid #000000;
                     border-radius: 100%;
                 }
                 &.icon-lock {
@@ -61,8 +62,8 @@ $button-size: 3rem;
     text-transform: uppercase;
     width: max-content;
     position: absolute;
-    border: 2px solid #ffffff;
-    border-radius: 3px;
+    border: 0.125rem solid #ffffff;
+    border-radius: 0.1875rem;
     color: #ffffff;
     top: $button-size + 0.5rem;
     text-align: center;
