@@ -1,29 +1,42 @@
 $progress-bar-color: #17F018;
 $progress-bar-background: #808080;
-$text-color: #e0e0e0;
+$text-shade-color: #b0b0b0;
+$text-color: #ffffff;
+$text-hover: #ffffff;
+$combat-color: rgba(150,0,0,0.3);
+$support-color: rgba(120,0,165,0.3);
+$survival-color: rgba(0,120,120,0.3);
+$tech-color: rgba(0, 60, 150, 0.3);
+$combat-title-color: transparentize($combat-color, 0.1);
+$support-title-color: transparentize($support-color, 0.1);
+$survival-title-color: transparentize($survival-color, 0.1);
+$tech-title-color: transparentize($tech-color, 0.1);
+$skill-column-gap: 0.5rem;
 
 :host {
     position: relative;
+    background-image: url(/assets/img/skills_bg.jpg);
+}
+
+:host,
+.underlay {
     background-color: #141718;
-    background-image: url(/assets/img/skills_bg.png);
     background-repeat: no-repeat;
     background-position-y: bottom;
     background-position-x: center;
+    // background-size: cover;
 }
 
 .underlay {
-    background-color: #ffffff;
     z-index: 1;
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-    background-image: url(/assets/img/skills_bg_robot.png);
-    background-repeat: no-repeat;
-    background-position-y: bottom;
-    background-position-x: center;
+    background-image: url(/assets/img/skills_bg_robot.jpg);
     opacity: 0;
+    // transition: opacity 30s;
 }
 
 .main-content {
@@ -31,45 +44,58 @@ $text-color: #e0e0e0;
 }
 
 .skill-progress {
+    @extend .no-select;
     padding: 1rem 0;
     .active-specialization {
+        cursor: pointer;
+        overflow: hidden;
+        margin-right: 0;
+        width: 0;
+        opacity: 0;
+        transition: margin-right 1s, width 1s, opacity 1s;
+        &.slide-open {
+            width: 13rem;
+            opacity: 1;
+            margin-right: 4%
+        }
         .icon {
             width: 3rem;
             height: 3rem;
-            background-color: lime;
         }
         .name {
             margin: auto 0;
-            padding-left: 0.15rem;
+            padding-left: 0.25rem;
         }
         .title,
         .skill-name {
             text-transform: uppercase;
-            line-height: 1rem;
-        }
+            line-height: 1.2rem;
+            white-space: nowrap;
+         }
         .title {
+            font-size: 0.85rem;
+            color: $text-shade-color;
+        }
+        .skill-name {
             font-size: 1rem;
             font-weight: 600;
             color: $text-color;
             letter-spacing: 0.1rem;
         }
-        .skill-name {
-            font-size: 0.85rem;
-            color: $text-color;
-        }
     }
     .skill-bar {
+        padding-top: 0.15rem;
         > span {
-            line-height: 3rem;
-            font-size: 1.2rem;
+            line-height: 1rem;
+            font-size: 1rem;
             font-weight: 100;
-            min-width: 3.1rem;
-            color: $text-color;
+            min-width: 2.65rem;
+            color: $text-shade-color;
+            padding-top: 1.55rem;
         }
         .progress-bar {
-            height: 3rem;
-            padding-top: 0.8rem;
-            padding-bottom: 0.85rem;
+            height: 1.2rem;
+            margin-top: 1.15rem;
             padding-left: 0.3rem;
             > span {
                 background-color: $progress-bar-background;
@@ -83,15 +109,130 @@ $text-color: #e0e0e0;
             }
         }
     }
+    .reset-button {
+        button {
+            color: $text-color;
+            border: 1px solid $text-shade-color;
+            margin: 0 0.5rem;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+        }
+    }
 }
 
 .skill-selection {
-    .skill-button {
-        width: 3rem;
-        height: 3rem;
-        background-color: lime;
-        cursor: pointer;
-
-        margin: 20px 20px;
+    margin-bottom: 2rem;
+    .spacer:first-child { box-shadow: none; }
+    .spacer {
+        width: $skill-column-gap;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
+        box-shadow: 0 -1rem 3rem #000000;
+        flex-shrink: 0;
     }
+    .skill-group {
+        height: 100%;
+    }
+    h2 {
+        color: $text-shade-color;
+        font-size: 1rem;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 3rem;
+        padding: 1rem 0 0;
+        // border-radius: 0 0 15% 15%;
+    }
+    > div {
+        background-size: 100% 80%;
+        background-repeat: no-repeat;
+        &.combat {
+            background-image: linear-gradient($combat-color, rgba(0,0,0,0));
+            h2 {
+                background-color: $combat-title-color;
+                box-shadow: 0 2.5rem 1.5rem $combat-title-color;
+            }
+        }
+        &.support {
+            background-image: linear-gradient($support-color, rgba(0,0,0,0));
+            h2 {
+                background-color: $support-title-color;
+                box-shadow: 0 2.5rem 1.5rem $support-title-color;
+            }
+        }
+        &.survival {
+            background-image: linear-gradient($survival-color, rgba(0,0,0,0));
+            h2 {
+                background-color: $survival-title-color;
+                box-shadow: 0 2.5rem 1.5rem $survival-title-color;
+            }
+        }
+        &.tech {
+            background-image: linear-gradient($tech-color, rgba(0,0,0,0));
+            h2 {
+                background-color: $tech-title-color;
+                box-shadow: 0 2.5rem 1.5rem $tech-title-color;
+            }
+        }
+        &:hover h2 {
+            color: $text-hover;
+        }
+    }
+}
+
+.skill-details {
+    padding-right: $skill-column-gap;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1));
+    h2 {
+        color: $text-color;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        margin: 1.6rem 0 0;
+    }
+    .skill-count {
+        padding-bottom: 0.25rem;
+        span {
+            position: relative;
+            height: 0.65rem;
+            width: 0.65rem;
+            border-radius: 0.65rem;
+            border: 2px solid #ffffff;
+            margin: 0 0.15rem;
+            &.highlight i {
+                height: calc(100% - 4px);
+                width: calc(100% - 4px);
+                border-radius: 0.65rem;
+                border: 1px solid transparent;
+                background-color: #ffffff;
+                position: absolute;
+                top: 1px;
+                left: 1px;
+            }
+        }
+    }
+    img {
+        width: 100%;
+    }
+    .description {
+        padding: 1rem 0.25rem;
+        p {
+            color: $text-color;
+            font-size: 1.2rem;
+            font-weight: 100;
+            line-height: 1.75rem;
+            margin-bottom: 1.25rem;
+            &:not(.special, :first-child) {
+                padding-left: 3.75em;
+                text-indent: -3.75em;
+            }
+        }
+    }
+}
+
+.no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }

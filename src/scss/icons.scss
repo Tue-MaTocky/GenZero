@@ -1,0 +1,271 @@
+
+@mixin icons() {
+    .arrow {
+        background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2225%22%20height%3D%2224%22%20viewBox%3D%220%200%2025%2024%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23FFF%22%20fill-rule%3D%22nonzero%22%3E%3Cg%3E%3Cg%3E%3Cpath%20d%3D%22M8%2016.6L12.6%2012%208%207.4%209.4%206%2015.4%2012%209.4%2018z%22%20transform%3D%22translate(-407%20-66)%20translate(325.727%2066)%20translate(81.837)%20rotate(90%2011.7%2012)%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E');
+        height: 24px;
+        width: 20px;
+    }
+
+    .icon-aim-speed {
+        background-image: url('../assets/icon/aim_speed.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-hip-shot-accuracy {
+        background-image: url('../assets/icon/hip_shot_accuracy.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-weapon-recoil {
+        background-image: url('../assets/icon/weapon_recoil.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-weapon-sway {
+        background-image: url('../assets/icon/weapon_sway.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-make-em-count {
+        background-image: url('../assets/icon/make_em_count.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-reload-speed {
+        background-image: url('../assets/icon/reload_speed.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-run-and-gun {
+        background-image: url('../assets/icon/run_and_gun.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-armor {
+        background-image: url('../assets/icon/armor.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-armor-damage {
+        background-image: url('../assets/icon/armor_damage.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-trigger-happy {
+        background-image: url('../assets/icon/trigger_happy.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-throw-accuracy {
+        background-image: url('../assets/icon/throw_accuracy.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-flanking {
+        background-image: url('../assets/icon/flanking.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-enemy-marking {
+        background-image: url('../assets/icon/enemy_marking.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-designated-target {
+        background-image: url('../assets/icon/designated_target.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-last-man-standing {
+        background-image: url('../assets/icon/last_man_standing.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-throw-distance {
+        background-image: url('../assets/icon/throw_distance.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-healer {
+        background-image: url('../assets/icon/healer.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-veteran-guerilla {
+        background-image: url('../assets/icon/veteran_guerilla.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-heal-amount {
+        background-image: url('../assets/icon/heal_amount.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-revive-speed {
+        background-image: url('../assets/icon/revive_speed.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-stamina-amount {
+        background-image: url('../assets/icon/stamina_amount.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-running-speed {
+        background-image: url('../assets/icon/running_speed.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-carry-capacity {
+        background-image: url('../assets/icon/carry_capacity.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-steady-feet {
+        background-image: url('../assets/icon/steady_feet.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-down-but-not-out {
+        background-image: url('../assets/icon/down_but_not_out.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-stamina-recharge {
+        background-image: url('../assets/icon/stamina_recharge.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-health-amount {
+        background-image: url('../assets/icon/health_amount.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-visibility {
+        background-image: url('../assets/icon/visibility.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-movement-noise {
+        background-image: url('../assets/icon/movement_noise.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-covert-movement-speed {
+        background-image: url('../assets/icon/covert_movement_speed.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-spotting-intel {
+        background-image: url('../assets/icon/spotting_intel.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-inquisitive-mind {
+        background-image: url('../assets/icon/inquisitive_mind.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-component-damage {
+        background-image: url('../assets/icon/component_damage.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-emp-expert {
+        background-image: url('../assets/icon/emp_expert.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-remote-hacking {
+        background-image: url('../assets/icon/remote_hacking.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-chemist {
+        background-image: url('../assets/icon/chemist.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-lock-picking {
+        background-image: url('../assets/icon/lock_picking.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-salvage {
+        background-image: url('../assets/icon/salvage.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-mechanic {
+        background-image: url('../assets/icon/mechanic.svg');
+        @extend .icon-background-image;
+    }
+
+    .icon-explosives-expert {
+        background-image: url('../assets/icon/explosives_expert.svg');
+        @extend .icon-background-image;
+    }
+
+    // Specialization Skills
+    .icon-marksman {
+        background-image: url('../assets/icon/marksman.svg');
+        background-size: cover;
+    }
+
+    .icon-vanguard {
+        background-image: url('../assets/icon/vanguard.svg');
+        background-size: cover;
+    }
+
+    .icon-commander {
+        background-image: url('../assets/icon/commander.svg');
+        background-size: cover;
+    }
+
+    .icon-medic {
+        background-image: url('../assets/icon/medic.svg');
+        background-size: cover;
+    }
+
+    .icon-survivor {
+        background-image: url('../assets/icon/survivor.svg');
+        background-size: cover;
+    }
+
+    .icon-commando {
+        background-image: url('../assets/icon/commando.svg');
+        background-size: cover;
+    }
+
+    .icon-hacker {
+        background-image: url('../assets/icon/hacker.svg');
+        background-size: cover;
+    }
+
+    .icon-engineer {
+        background-image: url('../assets/icon/engineer.svg');
+        background-size: cover;
+    }
+
+    // Lock Icons
+    .icon-lock:not(.specialization) {
+        background-image: url('../assets/icon/lock.svg');
+        background-size: cover;
+        border-radius: 100%;
+    }
+
+    .specialization.icon-lock {
+        background-image: url('../assets/icon/specialization_lock.svg');
+        background-size: cover;
+    }
+
+    // Global icon styles
+    .icon-background-image {
+        background-size: cover;
+        border-radius: 100%;
+        background-color: #000000;
+        border: 2px solid #ffffff;
+    }
+    
+}
+

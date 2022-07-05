@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { DataService } from './services/data.service';
 import { Title } from '@angular/platform-browser';
 import { Router, Event, NavigationEnd } from '@angular/router';
@@ -8,7 +8,8 @@ import { Router, Event, NavigationEnd } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
+  @ViewChild("copyBox") copyBox: ElementRef;
   cssClassMap = new Map();
   headerCssClass: string = "";
 
@@ -27,8 +28,19 @@ export class AppComponent implements OnInit {
 
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
-        this.headerCssClass = this.cssClassMap.get(this.router.url);
+        let url = this.router.url.indexOf("/gen-zero/skills") !== -1 ? "/gen-zero/skills" : this.router.url;
+        url = this.router.url.indexOf("/gen-zero/weapons") !== -1 ? "/gen-zero/weapons" : url;
+        this.headerCssClass = this.cssClassMap.get(url);
       }
     });
+  }
+
+  ngAfterViewInit(): void {
+    this.data.copyBox = this.copyBox;
+  }
+
+  loadCopyBox() {
+    this.data.showCopyBox = false;
+    window.location.href = this.data.url
   }
 }

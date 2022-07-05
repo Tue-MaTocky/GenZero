@@ -14,6 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { MatButtonModule } from "@angular/material/button";
+import {MatIconModule} from '@angular/material/icon';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 import { SkillsComponent } from './skills/skills.component';
 import { WeaponsComponent } from './weapons/weapons.component';
@@ -22,15 +24,20 @@ import { GearComponent } from './gear/gear.component';
 import { RightClickDirective } from './directives/right-click.directive';
 import { CloakDirective } from './directives/cloak.directive';
 
+import { SkillButtonComponent } from './components/skill-button/skill-button.component';
+
 @NgModule({
   declarations: [
     AppComponent,
+    // Pages
     SkillsComponent,
     WeaponsComponent,
     GearComponent,
     // Directives
     RightClickDirective,
-    CloakDirective
+    CloakDirective,
+    // Components
+    SkillButtonComponent
   ],
   imports: [
     provideFirebaseApp(()=> initializeApp(environment.firebase)),
@@ -40,7 +47,9 @@ import { CloakDirective } from './directives/cloak.directive';
     AppRoutingModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule,
+    MatTooltipModule
   ],
   providers: [
     // ScreenTrackingService

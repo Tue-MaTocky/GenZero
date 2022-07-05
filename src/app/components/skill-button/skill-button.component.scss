@@ -1,0 +1,123 @@
+$power-bar-color: #17F018;
+$button-size: 3rem;
+:host {
+    width: 100%;
+    position: relative;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.skill-button {
+    position: relative;
+    width: 100%;
+    .icon-button {
+        position: relative;
+        width: 100%;
+        width: $button-size;
+        height: $button-size;
+        color: #ffffff;
+        cursor: pointer;
+        &.icon-lock {
+            height: $button-size + 0.5rem;
+            width: $button-size + 0.5rem;
+            &.specialization {
+                height: $button-size + 1rem;
+                width: $button-size + 1rem;
+            }
+        }
+        &.specialization {
+            height: $button-size + 0.75rem;
+            width: $button-size + 0.75rem;
+    }
+    }
+    &.level-capped {
+        .icon-button {
+            border-color: #000000;
+            background-color: #222222;
+            &.specialization {
+                &:not(.icon-lock) {
+                    border: 2px solid #000000;
+                    border-radius: 100%;
+                }
+                &.icon-lock {
+                    background-color: transparent;
+                }
+                height: $button-size + 0.25rem;
+                width: $button-size + 0.25rem;
+            }
+        }
+        .level-count {
+            color: #888888;
+            border-color: #888888;
+        }
+    }
+}
+
+.level-count {
+    text-transform: uppercase;
+    width: max-content;
+    position: absolute;
+    border: 2px solid #ffffff;
+    border-radius: 3px;
+    color: #ffffff;
+    top: $button-size + 0.5rem;
+    text-align: center;
+    font-weight: 500;
+    background-color: #000000;
+    padding: 0 0.25rem;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+
+    transition: max-width 0.25s ease-in-out;
+    max-width: 2.35rem;
+
+    &.hover {
+        max-width: 175%;
+        z-index: 1;
+        .label {
+            max-width: 175%;
+            line-height: 1.25rem;
+        }
+    }
+    span {
+        padding: 0 .25rem;
+    }
+    .label {
+        transition: max-width 1s;
+        line-height: 0;
+        max-width: 0;
+        padding: 0;
+        font-size: 0.75rem;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}
+
+.power-bar{
+    position: absolute;
+    width: 0.25rem;
+    background-color: #aaaaaa;
+    margin: 0 auto;
+    height: 100%;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    top: 25%;
+    transition: width 1s;
+    &.power-up {
+        box-shadow: 0 0 0.5rem $power-bar-color;
+        width: 0.35rem;
+        > div { height: 100%; }
+    }
+    > div {
+        transition: height 1s;
+        height: 0;
+        width: 100%;
+        background-color: $power-bar-color;
+        border-radius: 1rem;
+    }
+}
