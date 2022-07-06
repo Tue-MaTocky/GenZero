@@ -10,6 +10,8 @@ import { DataService } from '../../services/data.service';
 export class SkillButtonComponent implements OnInit {
   readonly MaxSkill = 30;
 
+  private clicks = 0;
+
   hovering: boolean = false;
 
   @Input() skill: Skill;
@@ -27,7 +29,16 @@ export class SkillButtonComponent implements OnInit {
   }
 
   onClick(skill: Skill): void {
-    this.addSkill.emit(skill);
+    if(this.clicks++ <= 0) {
+      setTimeout(() => {
+        if(this.clicks > 1) {
+          this.removeSkill.emit(skill);
+        } else {
+          this.addSkill.emit(skill);
+        }
+        this.clicks = 0;
+      }, 300);
+    }
   }
 
   onRightClick(skill: Skill): void {
