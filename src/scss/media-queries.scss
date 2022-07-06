@@ -1,0 +1,49 @@
+
+@mixin media-queries() {
+
+    @media (min-height: 1040px) and (min-width: 1200px) {
+        font-size: 18px;
+    }
+
+    @media (max-height: 840px) and (min-height: 739px) and (min-width: 1200px) {
+        font-size: 14px;
+    }
+      
+    @media (max-height: 740px) and (min-width: 1200px) {
+        font-size: 12px;
+    }
+
+    @media (max-width: 1200px) {
+        .skill-selection {
+            flex-flow: row wrap !important;
+            max-width: 65% !important;
+            overflow-y: auto;
+        }
+
+        .combat,
+        .support,
+        .survival,
+        .tech {
+            flex: 1 1 50% !important;
+            max-width: 50% !important;
+        }
+        .spacer {
+            width: 0;
+        }
+        .skill-details {
+            max-width: 35% !important;
+        }
+    }
+
+    @media (min-width: 2500px) {
+        #Header #Header_Content {
+            flex: 1 0 75% !important;
+            max-width: 75%;
+        }
+
+        #Main_Content_Wrap #Main_Content {
+            flex: 1 0 75% !important;
+            max-width: 75%;
+        }
+    }
+}
