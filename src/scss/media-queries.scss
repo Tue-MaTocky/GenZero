@@ -5,6 +5,14 @@
         font-size: 18px;
     }
 
+    @media (min-height: 1200px) {
+        font-size: 22px;
+        app-skills,
+        .underlay {
+            background-size: cover;
+        }
+    }
+
     @media (max-height: 840px) and (min-height: 739px) and (min-width: 1200px) {
         font-size: 14px;
     }
