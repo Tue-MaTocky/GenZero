@@ -133,8 +133,10 @@ $skill-column-gap: 0.5rem;
         flex-shrink: 0;
     }
     .skill-group {
+        &:hover {
+            z-index: 10;
+        }
         height: 100%;
-        overflow-y: auto;
         padding: 0 0 1.5rem;
     }
     h2 {
@@ -219,7 +221,6 @@ $skill-column-gap: 0.5rem;
     .description {
         margin-top: 0.5rem;
         padding: 1rem 0.25rem;
-        overflow-y: auto;
             p {
             color: $text-color;
             font-size: 1.2rem;
