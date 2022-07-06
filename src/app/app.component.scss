@@ -1,25 +1,26 @@
-h1 {
-    color: #ffffff;
-    line-height: 2.75rem;
-    margin: auto;
-    padding-left: 3rem;
-    text-transform: capitalize;
-    font-weight: 100;
-    font-size: 1.75rem;
-    text-shadow: 0.1875rem 0.1875rem 0.1875rem black;
-}
-
-.share-links {
-    padding: 0.25rem;
-    a,
-    button {
-        border-radius: 100% !important;
+#Header{
+    h1 {
+        color: #ffffff;
+        line-height: 2.75rem;
         margin: auto;
-        height: 2.25rem;
-        padding: 0 !important;
+        padding-left: 3rem;
+        text-transform: capitalize;
+        font-weight: 100;
+        font-size: 1.75rem;
+        text-shadow: 0.1875rem 0.1875rem 0.1875rem black;
+    }
+
+    .share-links {
+        padding: 0.25rem;
+        a,
+        button {
+            border-radius: 100% !important;
+            margin: auto;
+            height: 2.25rem;
+            padding: 0 !important;
+        }
     }
 }
-
 .copy-box {
     overflow: hidden;
     position: absolute;
