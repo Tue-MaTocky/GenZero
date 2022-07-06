@@ -215,6 +215,9 @@ $skill-column-gap: 0.5rem;
             }
         }
     }
+    .skill-specs {
+        overflow-y: auto;
+    }
     img {
         width: 100%;
     }
