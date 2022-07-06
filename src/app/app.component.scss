@@ -1,9 +1,12 @@
 .share-links {
     margin-left: auto;
     padding: 0.25rem;
+    a,
     button {
         border-radius: 100% !important;
-        width: auto;
+        margin: auto;
+        height: 2.25rem;
+        padding: 0 !important;
     }
 }
 
