@@ -54,4 +54,16 @@
             max-width: 75%;
         }
     }
+
+    // Force Landscape view. 
+    @media (pointer:none), (pointer:coarse) and (max-width: 800px) and (orientation: portrait) {
+        transform: rotate(-90deg);
+        transform-origin: left top;
+        height: 100vw;
+        width: auto;
+        overflow-x: hidden;
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
 }
