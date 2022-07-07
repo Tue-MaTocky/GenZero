@@ -4,20 +4,15 @@ import { GearComponent } from './gear/gear.component';
 import { SkillsComponent } from './skills/skills.component';
 import { WeaponsComponent } from './weapons/weapons.component';
 
-const routes: Routes = [{
-  path: 'gen-zero',
-  children: [
+const routes: Routes = [
   { path: 'skills', component: SkillsComponent },
   { path: 'skills/:codeData', component: SkillsComponent },
   { path: 'weapons', component: WeaponsComponent },
   { path: 'weapons/:codeData', component: WeaponsComponent },
   { path: 'gear', component: GearComponent },
-  { path: '', redirectTo: 'gen-zero/skills', pathMatch: 'full' },
-  { path: '**', redirectTo: 'gen-zero/skills', pathMatch: 'full' }
-  ],
-},
-{ path: '', redirectTo: 'gen-zero/skills', pathMatch: 'full' },
-{ path: '**', redirectTo: 'gen-zero/skills', pathMatch: 'full' }
+  { path: '', redirectTo: 'skills', pathMatch: 'full' },
+  { path: ':codeData', redirectTo: 'skills/:codeData', pathMatch: 'full' },
+  { path: '**', redirectTo: 'skills', pathMatch: 'full' }
 ];
 
 @NgModule({

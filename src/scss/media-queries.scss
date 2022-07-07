@@ -1,7 +1,7 @@
 
 @mixin media-queries() {
 
-    @media (min-height: 1040px) and (min-width: 1200px) {
+    @media (min-height: 1040px) and (min-width: 1070px) {
         font-size: 18px;
     }
 
@@ -13,19 +13,24 @@
         }
     }
 
-    @media (max-height: 840px) and (min-height: 739px) and (min-width: 1200px) {
+    @media (max-height: 840px) and (min-height: 739px) and (min-width: 1070px) {
         font-size: 14px;
     }
       
-    @media (max-height: 740px) and (min-width: 1200px) {
+    @media (max-height: 740px) and (min-width: 1070px) {
         font-size: 12px;
     }
 
-    @media (max-width: 1200px) {
+    @media (max-width: 1070px) {
+        .active-bar,
         .skill-selection {
             flex-flow: row wrap !important;
             max-width: 65% !important;
             overflow: auto;
+        }
+        .reset-button,
+        .skill-details {
+            max-width: 35% !important;
         }
 
         .combat,
@@ -38,37 +43,91 @@
         .spacer {
             width: 0;
         }
-        .skill-details {
-            max-width: 35% !important;
-        }
 
         #Header h1 {
-            font-size: 1rem;
+            font-size: 1.5rem;
             padding-left: 1rem;
         }
     }
 
-    @media (min-width: 2500px) {
-        #Header #Header_Content {
-            flex: 1 0 75% !important;
-            max-width: 75%;
+    @media (max-width: 875px) {
+        #Header h1 {
+            font-size: 1rem;
         }
 
-        #Main_Content_Wrap #Main_Content {
-            flex: 1 0 75% !important;
-            max-width: 75%;
+        .active-bar,
+        .skill-selection {
+            max-width: 50% !important;
+        }
+        .reset-button,
+        .skill-details {
+            max-width: 50% !important;
+        }
+        .combat,
+        .support,
+        .survival,
+        .tech {
+            flex: 1 1 100% !important;
+            max-width: 100% !important;
+        }
+
+        .active-bar {
+            flex-direction: column !important;
+            padding-left: 1rem;
+        }
+        .skill-progress {
+            padding: 0;
+            span { 
+                margin-bottom: 0.5rem;
+            }
+            button {
+                max-height: 2.5rem !important;
+            }
+        }
+        .active-specialization {
+            padding: 0.25rem 0;
+            .icon {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+            .title { font-size: 0.75rem; }
+            .skill-name { font-size: 0.85rem; }
+            span {
+                margin-bottom: 0;
+            }
+        }
+        .skill-bar {
+            .progress-bar,
+            span {
+                margin-top: 0;
+                padding-top: 0;
+                padding-bottom: 0.5rem;
+            }
+        }
+        .reset-button {
+            margin: auto 0 0;
         }
     }
 
-    // Force Landscape view. 
-    @media (pointer:none), (pointer:coarse) and (max-width: 800px) and (orientation: portrait) {
-        transform: rotate(-90deg);
-        transform-origin: left top;
-        height: 100vw;
-        width: auto;
-        overflow-x: hidden;
-        position: absolute;
-        top: 100%;
-        left: 0;
+    @media (max-width: 645px) {
+        .active-bar {
+            max-width: 67% !important;
+        }
+        .reset-button {
+            max-width: 33% !important;
+        }
+
+    }
+
+    @media (max-width: 1400px) {
+        #Header #Header_Content {
+            flex: 1 0 98% !important;
+            max-width: 98%;
+        }
+
+        #Main_Content_Wrap #Main_Content {
+            flex: 1 0 98% !important;
+            max-width: 98%;
+        }
     }
 }

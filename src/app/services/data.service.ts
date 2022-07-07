@@ -79,8 +79,12 @@ export class DataService {
   updateCodeData(codeData: string): void {
     if (!codeData) { return; }
     setTimeout(()=> { this.codeData = codeData; }, 0);
-    this.extractDataCode(codeData);
-    this.updateSpecialization();
+    const success = this.extractDataCode(codeData);
+    if (success) {
+      this.updateSpecialization();
+    } else {
+      window.location.href = window.location.origin;
+    }
   }
 
   private constructDataCode(): string {
@@ -92,7 +96,7 @@ export class DataService {
     return dataStr;
   }
 
-  private extractDataCode(code: string): void {
+  private extractDataCode(code: string): boolean {
     let dataCode = "";
     const codeNodes =code.split("~");
     codeNodes.forEach(node => {
@@ -103,6 +107,7 @@ export class DataService {
     });
     dataCode = `{${dataCode.slice(0, -1)}}`;
     this.data = JSON.parse(dataCode);
+    return dataCode === "{}" ? false : true;
   }
 
   private dataString(dataNode: string[]): string {
@@ -144,8 +149,7 @@ export class DataService {
   }
 
   private copyToClipBoard(value: string) {
-    console.log(window.location);
-    this.url = `${window.location.origin}/gen-zero/skills/${value}`;
+    this.url = `${window.location.origin}/${value}`;
     this.showCopyBox = true;
     const el = this.copyBox.nativeElement;
     el.value = this.url;

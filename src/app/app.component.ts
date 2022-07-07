@@ -20,16 +20,16 @@ export class AppComponent implements OnInit, AfterViewInit {
   ) {}
 
   ngOnInit(): void {
-    this.titleSrv.setTitle("GenZero - Skill Calculator");
+    this.titleSrv.setTitle("GenZero - Build Calculator");
 
-    this.cssClassMap.set("/gen-zero/skills", "skill-page");
-    this.cssClassMap.set("/gen-zero/weapons", "weapon-page");
-    this.cssClassMap.set("/gen-zero/gear", "gear-page");
+    this.cssClassMap.set("/skills", "skill-page");
+    this.cssClassMap.set("/weapons", "weapon-page");
+    this.cssClassMap.set("/gear", "gear-page");
 
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
-        let url = this.router.url.indexOf("/gen-zero/skills") !== -1 ? "/gen-zero/skills" : this.router.url;
-        url = this.router.url.indexOf("/gen-zero/weapons") !== -1 ? "/gen-zero/weapons" : url;
+        let url = this.router.url.indexOf("/skills") !== -1 ? "/skills" : this.router.url;
+        url = this.router.url.indexOf("/weapons") !== -1 ? "/weapons" : url;
         this.headerCssClass = this.cssClassMap.get(url);
       }
     });
