@@ -6,7 +6,8 @@ import { environment } from 'src/environments/environment';
 // https://www.npmjs.com/package/@angular/fire
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 // https://github.com/angular/angularfire/blob/HEAD/docs/analytics/getting-started.md
-// import { AngularFireAnalyticsModule, ScreenTrackingService } from '@angular/fire/compat/analytics';
+import { AngularFireAnalyticsModule, ScreenTrackingService } from '@angular/fire/compat/analytics';
+import { provideAnalytics, getAnalytics } from '@angular/fire/analytics';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,8 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { MatButtonModule } from "@angular/material/button";
-import {MatIconModule} from '@angular/material/icon';
-import {MatTooltipModule} from '@angular/material/tooltip';
+import { MatIconModule} from '@angular/material/icon';
+import { MatTooltipModule} from '@angular/material/tooltip';
 
 import { SkillsComponent } from './skills/skills.component';
 import { WeaponsComponent } from './weapons/weapons.component';
@@ -41,6 +42,7 @@ import { SkillButtonComponent } from './components/skill-button/skill-button.com
   ],
   imports: [
     provideFirebaseApp(()=> initializeApp(environment.firebase)),
+    provideAnalytics(() => getAnalytics()),
     // AngularFireAnalyticsModule,
     BrowserModule,
     CommonModule,
@@ -52,7 +54,7 @@ import { SkillButtonComponent } from './components/skill-button/skill-button.com
     MatTooltipModule
   ],
   providers: [
-    // ScreenTrackingService
+    ScreenTrackingService
   ],
   bootstrap: [AppComponent]
 })

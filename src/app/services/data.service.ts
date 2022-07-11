@@ -1,4 +1,5 @@
 import { Injectable, ElementRef } from '@angular/core';
+// import { AngularFireAnalytics } from '@angular/fire/compat/analytics';
 import { skillData, Skill } from '../data/skillData';
 
 
@@ -20,6 +21,7 @@ export class DataService {
   codeData: string = "";
 
   constructor() { 
+  // constructor(private analytics: AngularFireAnalytics) {
     this.resetSelectedSpecial();
   }
 
@@ -39,7 +41,7 @@ export class DataService {
   createLink(): void {
     const dataCode = this.constructDataCode();
     this.copyToClipBoard(dataCode);
-    // this.extractDataCode(dataCode);
+    // this.analytics.logEvent('Saved Build: ', this.data);
   }
 
   resetSelectedSpecial(): void {
