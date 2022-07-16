@@ -22,6 +22,7 @@
     }
 
     @media (max-width: 1070px) {
+        font-size: 14px;
         .active-bar,
         .skill-selection {
             flex-flow: row wrap !important;
@@ -51,6 +52,7 @@
     }
 
     @media (max-width: 875px) {
+        font-size: 13px;
         #Header h1 {
             font-size: 1rem;
         }
