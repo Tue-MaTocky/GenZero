@@ -39,9 +39,9 @@ export class DataService {
   }
 
   createLink(): void {
+    // this.analytics.logEvent('Saved Build: ', this.data);
     const dataCode = this.constructDataCode();
     this.copyToClipBoard(dataCode);
-    // this.analytics.logEvent('Saved Build: ', this.data);
   }
 
   resetSelectedSpecial(): void {
