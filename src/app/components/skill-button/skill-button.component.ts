@@ -55,7 +55,7 @@ export class SkillButtonComponent implements OnInit {
   }
 
   get lockSkill(): boolean {
-    return this.skill.prerequisite !== "" && this.data.get(this.skill.prerequisite) <= 0;
+    return this.skill.prerequisite !== "" && this.data.get(this.skill.prerequisite) <= 0 || (this.data.maxSkillsReached && this.data.get(this.skill.id) === 0);
   }
 
   get powerUp(): {'power-up': boolean} {
