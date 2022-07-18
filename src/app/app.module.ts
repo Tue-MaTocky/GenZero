@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 // https://github.com/angular/angularfire/blob/HEAD/docs/analytics/getting-started.md
 import { AngularFireAnalyticsModule, ScreenTrackingService } from '@angular/fire/compat/analytics';
-import { provideAnalytics, getAnalytics } from '@angular/fire/analytics';
+import { AngularFireModule } from '@angular/fire/compat';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -42,8 +42,8 @@ import { SkillButtonComponent } from './components/skill-button/skill-button.com
   ],
   imports: [
     provideFirebaseApp(()=> initializeApp(environment.firebase)),
-    provideAnalytics(() => getAnalytics()),
-    // AngularFireAnalyticsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAnalyticsModule,
     BrowserModule,
     CommonModule,
     AppRoutingModule,

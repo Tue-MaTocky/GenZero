@@ -1,5 +1,5 @@
 import { Injectable, ElementRef } from '@angular/core';
-// import { AngularFireAnalytics } from '@angular/fire/compat/analytics';
+import { AngularFireAnalytics } from '@angular/fire/compat/analytics';
 import { skillData, Skill } from '../data/skillData';
 
 
@@ -22,8 +22,7 @@ export class DataService {
   _shakeLink: number = 0;
   
 
-  constructor() { 
-  // constructor(private analytics: AngularFireAnalytics) {
+  constructor(private analytics: AngularFireAnalytics) {
     this.resetSelectedSpecial();
   }
 
@@ -54,7 +53,7 @@ export class DataService {
   }
 
   createLink(): void {
-    // this.analytics.logEvent('Saved Build: ', this.data);
+    this.analytics.logEvent('Saved_Build', this.data);
     const dataCode = this.constructDataCode();
     this.copyToClipBoard(dataCode);
   }
