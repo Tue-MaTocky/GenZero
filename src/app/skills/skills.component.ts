@@ -55,13 +55,13 @@ export class SkillsComponent implements OnInit {
     }
   }
 
-  calcProgress(): void {
+  calcProgress(reportMaxed: boolean = true): void {
     if (this.skillCount === this.MaxSkill) {
-      this.data.maxSkillsReached = true;
+      if(reportMaxed) { this.data.maxSkillsReached = true; }
       this.skillProgress = 1
       return;
     }
-    this.data.maxSkillsReached = false;
+    if(reportMaxed) { this.data.maxSkillsReached = false; }
     this.skillProgress = (this.skillCount - 1) / this.MaxSkill;
   }
 
@@ -140,6 +140,7 @@ export class SkillsComponent implements OnInit {
     } else {
       this.data.clear('sss');
     }
+    this.data.maxSkillsReached = this.skillCount === this.MaxSkill;
   }
 
   private initSkill(skill: Skill, valid: boolean): boolean {
@@ -161,7 +162,7 @@ export class SkillsComponent implements OnInit {
     }
 
     this.skillCount += current;
-    this.calcProgress();
+    this.calcProgress(false);
 
     if(skill.specialization && current) {
       this.addToSpecial(skill);

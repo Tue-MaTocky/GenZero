@@ -199,7 +199,7 @@ $skill-column-gap: 0.5rem;
         text-transform: uppercase;
         font-size: 1.5rem;
         line-height: 1.5rem;
-        margin: 0.6rem 0 0;
+        margin: 0.6rem 0.25rem 0;
     }
     .skill-count {
         padding-bottom: 0.25rem;
@@ -231,7 +231,7 @@ $skill-column-gap: 0.5rem;
     .description {
         margin-top: 0.5rem;
         padding: 1rem 0.25rem;
-            p {
+        p {
             color: $text-color;
             font-size: 1.2rem;
             font-weight: 100;

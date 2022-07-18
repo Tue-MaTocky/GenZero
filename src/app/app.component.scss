@@ -11,13 +11,43 @@
     }
 
     .share-links {
+        position: relative;
         padding: 0.25rem;
         a,
         button {
             border-radius: 100% !important;
             margin: auto;
             height: 2.25rem;
+            width: 2.25rem;
             padding: 0 !important;
+            z-index: 1000;
+        }
+        .icon-favicon {
+            height: 50%;
+            width: 50%;
+            position: relative;
+            margin: auto;
+            top: 0.625rem;
+        }
+        button.shake {
+            // animation: shake-rotation 1s infinite linear;
+            animation: shake-rotation 1s linear;
+            animation-iteration-count: 10;
+            animation-delay: 3s;
+        }
+        .link-message {
+            border-radius: 100%;
+            position: absolute;
+            opacity: 0;
+            right: 4.25rem;
+            white-space: nowrap;
+            line-height: 2.5rem;
+            .mat-icon {
+                margin: auto 0 auto 0.15rem;
+            }
+            &.show-link-message {
+                animation: show-fade 7s linear;
+            }
         }
     }
 }
@@ -68,7 +98,6 @@
         font-size: 1rem;
         margin: 0;
         font-weight: 100;
-        text-transform: uppercase;
         @extend .no-select;
     }
     button {
@@ -89,4 +118,48 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+@keyframes shake-rotation {
+    0% {transform: rotate(0deg);}
+    15% {transform: rotate(10deg);}
+    30% {transform: rotate(-10deg);}
+    45% {transform: rotate(5deg);}
+    55% {transform: rotate(-5deg);}
+    70% {transform: rotate(2deg);}
+    85% {transform: rotate(-2deg);}
+    100% {transform: rotate(0deg);}
+}
+
+@keyframes show-fade {
+    // bounce
+    0%, 41%, 48%, 51%, 54%, 56%, 58%, 60% {
+        right: 4.25rem;
+    }
+    38% {
+        // left: -15rem;
+        right: 6.75rem;
+    }
+    45% {
+        // left: -14.5rem;
+        right: 5.25rem;
+    }
+    50%, 52% {
+        // left: -14rem;
+        right: 4.75rem;
+    }
+    55%, 57%, 59% {
+        // left: -13.75rem;
+        right: 4.5rem;
+    }
+    // fade
+    0% {
+        opacity: 1;
+    }
+    95% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }

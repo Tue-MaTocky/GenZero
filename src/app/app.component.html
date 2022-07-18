@@ -2,7 +2,7 @@
   <div class="copy-box" [class.show]="data.showCopyBox">
     <div class="flyout">
       <button mat-icon-button (click)="loadCopyBox()"><mat-icon>close</mat-icon></button>
-      <h2>The link to this build</h2>
+      <h2>The build link below has been copied to your clipboard.</h2>
       <input #copyBox type="text" (click)="this.copyBox.select()">
     </div>
     <div class="overlay" (click)="loadCopyBox()"></div>
@@ -16,17 +16,16 @@
       </div>
       <h1 fxFlex="100%">Generation Zero - Skill Calculator</h1>
       <div class="share-links" fxLayout="row">
-        <button mat-icon-button
+        <div class="link-message" fxLayout="row" [ngClass]="{'show-link-message': data.shakeLink}">Share your build with others <mat-icon>east</mat-icon></div>
+          <button mat-icon-button [ngClass]="{'shake': data.shakeLink}"
           matTooltip="Link to this build"
-          (click)="data.createLink()"
-        >
-          <mat-icon>share</mat-icon>
+          (click)="data.createLink()">
+            <mat-icon>share</mat-icon>
         </button>
         <a mat-icon-button
           matTooltip="Buy Generation Zero here"
-          href="https://generationzero.com/en#get-the-game" target="_blank"
-        >
-          <mat-icon>attach_money</mat-icon>
+          href="https://generationzero.com/en#get-the-game" target="_blank">
+            <div class="icon-favicon"></div>
         </a>
       </div>
     </div>

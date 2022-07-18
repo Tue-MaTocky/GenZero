@@ -27,21 +27,30 @@
     }
 
     &.skill-page {
-        background-color: c.$header-skill-color;
+        &,
+        .share-links .link-message {
+            background-color: c.$header-skill-color;
+        }
         .skill-button {
             @include selected-button();
         }
     }
 
     &.weapon-page {
-        background-color: c.$header-weapon-color;
+        &,
+        .share-links .link-message {
+            background-color: c.$header-weapon-color;
+        }
         .weapon-button {
             @include selected-button();
         }
     }
 
     &.gear-page {
-        background-color: c.$header-gear-color;
+        &,
+        .share-links .link-message {
+            background-color: c.$header-gear-color;
+        }
         .gear-button {
             @include selected-button();
         }

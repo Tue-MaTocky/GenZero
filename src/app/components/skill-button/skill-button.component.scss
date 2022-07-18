@@ -33,16 +33,39 @@ $button-size: 3rem;
         &.specialization {
             height: $button-size + 0.75rem;
             width: $button-size + 0.75rem;
+        }
     }
+    .icon-button-lock {
+        z-index: 100;
+        position: absolute;
+        height: 3.25rem;
+        width: 3.25rem;
+        background-color: rgba(0,0,0,0.3);
+        border-radius: 100%;
+    }
+    .icon-button-lock-spec {
+        z-index: 100;
+        position: absolute;
+        height: 2.75rem;
+        width: 2.75rem;
+        background-color: rgba(0, 0, 0, 0.3);
+        top: 0.5rem;
+        transform: rotate(45deg);
+        > div {
+            height: 100%;
+            width: 100%;
+            transform: rotate(-45deg);
+        }
     }
     &.level-capped {
         .icon-button {
-            border-color: #000000;
-            background-color: #222222;
+            &:not(.specialization){
+                border-color: #000000 !important;
+                background-color: #222222 !important;
+            }
             &.specialization {
                 &:not(.icon-lock) {
-                    border: 0.125rem solid #000000;
-                    border-radius: 100%;
+                    opacity: 0.5;
                 }
                 &.icon-lock {
                     background-color: transparent;
@@ -103,7 +126,7 @@ $button-size: 3rem;
     width: 0.25rem;
     background-color: #aaaaaa;
     margin: 0 auto;
-    height: 100%;
+    height: 76%;
     left: 0;
     right: 0;
     z-index: -1;

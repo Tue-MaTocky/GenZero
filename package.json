@@ -18,7 +18,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "preview": "firebase emulators:start",
-    "deploy": "firebase deploy --only hosting",
+    "deploy": "firebase deploy",
+    "deploy_host": "firebase deploy --only hosting",
     "ngCacheOff": "ng config cli.cache.enabled false",
     "ngCacheOn": "ng config cli.cache.enabled true",
     "ngCacheClear": "rmdir /s /q .angular\\cache"

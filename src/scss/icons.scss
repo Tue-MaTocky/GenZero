@@ -242,11 +242,21 @@
         background-size: cover;
     }
 
+    .icon-favicon {
+        background-image: url('../assets/icon/favicon.svg');
+        background-size: cover;
+    }
+
     // Lock Icons
     .icon-lock:not(.specialization) {
         background-image: url('../assets/icon/lock.svg');
         background-size: cover;
         border-radius: 100%;
+    }
+
+    .icon-lock-trans {
+        background-image: url('../assets/icon/lock_trans.svg');
+        background-size: cover;
     }
 
     .specialization.icon-lock {

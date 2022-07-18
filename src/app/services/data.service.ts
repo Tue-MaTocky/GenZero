@@ -13,12 +13,14 @@ export class DataService {
 
   private data: any = {};
   private _selectedSpecial: Skill
-
-  maxSkillsReached: boolean = false;
+  private _maxSkillsReached: boolean = false;
+  
   copyBox: ElementRef;
   showCopyBox: boolean = false;
   url: string = "";
   codeData: string = "";
+  _shakeLink: number = 0;
+  
 
   constructor() { 
   // constructor(private analytics: AngularFireAnalytics) {
@@ -36,6 +38,19 @@ export class DataService {
 
   get selectedSpecial(): Skill {
     return this._selectedSpecial;
+  }
+
+  set maxSkillsReached (value: boolean) {
+    if (value) { this._shakeLink++; }
+    this._maxSkillsReached = value;
+  }
+
+  get maxSkillsReached (): boolean {
+    return this._maxSkillsReached;
+  }
+
+  get shakeLink(): boolean {
+    return this._shakeLink > 1 || Object.keys(this.data).length === 0;
   }
 
   createLink(): void {
