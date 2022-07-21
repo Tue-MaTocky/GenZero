@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WeaponsComponent implements OnInit {
 
+  toggleBg: boolean =  false;
+  
   constructor() { }
 
   ngOnInit(): void {

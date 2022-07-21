@@ -26,6 +26,7 @@ import { RightClickDirective } from './directives/right-click.directive';
 import { CloakDirective } from './directives/cloak.directive';
 
 import { SkillButtonComponent } from './components/skill-button/skill-button.component';
+import { WeaponWheelSliceComponent } from './components/weapon-wheel-slice/weapon-wheel-slice.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { SkillButtonComponent } from './components/skill-button/skill-button.com
     RightClickDirective,
     CloakDirective,
     // Components
-    SkillButtonComponent
+    SkillButtonComponent,
+    WeaponWheelSliceComponent
   ],
   imports: [
     provideFirebaseApp(()=> initializeApp(environment.firebase)),

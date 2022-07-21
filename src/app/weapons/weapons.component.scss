@@ -1,6 +1,10 @@
 :host {
     position: relative;
     background-image: url(/assets/img/weapons_bg.jpg);
+}
+
+:host,
+.underlay {
     background-color: #141718;
     background-repeat: no-repeat;
     background-position-y: bottom;
@@ -8,15 +12,42 @@
     background-size: cover;
 }
 
-h2 {
-    color: #ffffff;
-    font-size: 4rem;
-    font-weight: 100;
+.underlay {
+    z-index: 1;
     position: absolute;
-    bottom: 3rem;
-    margin: auto;
+    top: 0;
     left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url(/assets/img/weapon_bg.jpg);
+    // background-image: url(/assets/img/weapon_bg_overlay.png);
+}
+
+.toggle-bkg {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    background-color: lime;
+    z-index: 100;
+}
+.main-content {
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+}
+.origin {
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: 6px;
+    bottom: 0;
+    left: -2px;
     right: 0;
-    width: fit-content;
-    text-transform: capitalize;
+    margin: auto;
+    height: 20.875rem;
+    width: 20.875rem;
+    // border: 0.125rem solid red;
+    // border-radius: 100%;
+    // height: 6.5rem;
+    // width: 6.5rem;
 }
