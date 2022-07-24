@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-weapons',
@@ -6,12 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./weapons.component.scss']
 })
 export class WeaponsComponent implements OnInit {
+  readonly slots: number[] = [0,1,2,3,4,5,6,7];
 
-  toggleBg: boolean =  false;
+  private selectedSlot: number = 5;
   
-  constructor() { }
+  toggleBg: boolean = false;
+  
+  constructor(readonly data: DataService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
+
+  selected(slotNum: number): boolean {
+    return this.selectedSlot === slotNum;
   }
 
 }

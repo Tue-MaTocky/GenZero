@@ -1,3 +1,5 @@
+@use "../../scss/crown-colors.scss" as c;
+
 $bg-scroll-duration: 240s;
 :host {
     position: relative;

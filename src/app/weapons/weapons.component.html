@@ -1,7 +1,7 @@
 <div class="toggle-bkg" (click)="toggleBg = !toggleBg"></div>
 <div class="main-content">
     <div class="origin">
-        <weapon-wheel-slice></weapon-wheel-slice>
+        <weapon-wheel-slice *ngFor="let slot of slots" [slicePosition]="slot" [select]="selected(slot)"></weapon-wheel-slice>
     </div>
 </div>
 <div class="underlay" *ngIf="toggleBg"></div>

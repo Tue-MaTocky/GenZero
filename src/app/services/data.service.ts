@@ -1,6 +1,7 @@
 import { Injectable, ElementRef } from '@angular/core';
 import { AngularFireAnalytics } from '@angular/fire/compat/analytics';
 import { skillData, Skill } from '../data/skillData';
+import { WeaponWheel } from '../data/weaponData';
 
 
 @Injectable({
@@ -12,6 +13,32 @@ export class DataService {
   private readonly skills = skillData;
 
   private data: any = {};
+  public weaponData: WeaponWheel[] = [{
+    slot: 1,
+    crown: 1
+  },{
+    slot: 2,
+    crown: 2
+  },{
+    slot: 3,
+    crown: 3
+  },{
+    slot: 4,
+    crown: 4
+  },{
+    slot: 5,
+    crown: 5
+  },{
+    slot: 6,
+    crown: 6
+  },{
+    slot: 7,
+    crown: 0
+  },{
+    slot: 8,
+    crown: 0
+  }];
+
   private _selectedSpecial: Skill
   private _maxSkillsReached: boolean = false;
   
@@ -46,16 +73,6 @@ export class DataService {
 
   get maxSkillsReached (): boolean {
     return this._maxSkillsReached;
-  }
-
-  get shakeLink(): boolean {
-    return this._shakeLink > 1 || Object.keys(this.data).length === 0;
-  }
-
-  createLink(): void {
-    this.analytics.logEvent('Saved_Build', this.data);
-    const dataCode = this.constructDataCode();
-    this.copyToClipBoard(dataCode);
   }
 
   resetSelectedSpecial(): void {
@@ -164,6 +181,20 @@ export class DataService {
     }
   }
 
+  /*************************************************************/
+  // Global Utility
+  /*************************************************************/
+
+  get shakeLink(): boolean {
+    return this._shakeLink > 1 || Object.keys(this.data).length === 0;
+  }
+
+  createLink(): void {
+    this.analytics.logEvent('Saved_Build', this.data);
+    const dataCode = this.constructDataCode();
+    this.copyToClipBoard(dataCode);
+  }
+
   private copyToClipBoard(value: string) {
     this.url = `${window.location.origin}/${value}`;
     this.showCopyBox = true;
@@ -173,5 +204,13 @@ export class DataService {
     el.focus();
     el.select();
     document.execCommand('copy');
+  }
+
+  /*************************************************************/
+  // Weapon Data
+  /*************************************************************/
+
+  getWeapon(slot: number) {
+    return this.weaponData[slot];
   }
 }
