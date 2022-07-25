@@ -21,4 +21,8 @@ export class WeaponsComponent implements OnInit {
     return this.selectedSlot === slotNum;
   }
 
+  selectSlot(slotNum: number) {
+    this.selectedSlot = slotNum;
+  }
+
 }

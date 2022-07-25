@@ -1,6 +1,6 @@
 @use "../../../scss/crown-colors.scss" as c;
 
-$neutral-border-color: #666666;
+$neutral-border-color: rgba(100, 100, 100, 0.5);
 $gap-color: #333333;
 $border-width: 0.125rem;
 $inner-circle-radius: 3.25rem;
@@ -56,9 +56,10 @@ $side-rotation: 22.5deg;
     left: 0;
     right: 0;
     top: -0.5rem;
-    height: 7.25rem;
+    height: 7.125rem;
     width: 1.75rem;
     border-top: 0.9375rem solid transparent;
+    border-radius: 23% 23% 0 0;
     transform: matrix3d(2, 0, 0, 0, 0, 0.5, 0, 0.00999, 0, 0, 1, 0, 0, 0, 0, 1);
 }
 .right-side,
@@ -123,98 +124,95 @@ $side-rotation: 22.5deg;
     top: 6.45rem;
     border-radius: 66% 66% 0% 0%;
 }
-.weapon-crown-0 {
-    .weapon-crown-bar {
-        background-color: transparent;
-    }
+.weapon-crown-0 .weapon-crown-bar {
+    background-color: transparent;
 }
 .weapon-crown-1 {
     .weapon-crown-bar {
         background-color: c.$crown-color-1;
     }
-    &.select {
-        .right-side,
-        .left-side {
-            border-color: c.$crown-color-1;
-        }
-        .back-drop {
-            border-color: c.$crown-color-1;
-        }
-    }
+    // &.select {
+    //     .right-side,
+    //     .left-side {
+    //         border-color: c.$crown-color-1;
+    //     }
+    //     .back-drop {
+    //         border-color: c.$crown-color-1;
+    //     }
+    // }
 }
 .weapon-crown-2 {
     .weapon-crown-bar {
         background-color: c.$crown-color-2;
     }
-    &.select {
-        .right-side,
-        .left-side {
-            border-color: c.$crown-color-2;
-        }
-        .back-drop {
-            border-color: c.$crown-color-2;
-        }
-    }
+    // &.select {
+    //     .right-side,
+    //     .left-side {
+    //         border-color: c.$crown-color-2;
+    //     }
+    //     .back-drop {
+    //         border-color: c.$crown-color-2;
+    //     }
+    // }
 }
 .weapon-crown-3 {
     .weapon-crown-bar {
         background-color: c.$crown-color-3;
     }
-    &.select {
-        .right-side,
-        .left-side {
-            border-color: c.$crown-color-3;
-        }
-        .back-drop {
-            border-color: c.$crown-color-3;
-        }
-    }
+    // &.select {
+    //     .right-side,
+    //     .left-side {
+    //         border-color: c.$crown-color-3;
+    //     }
+    //     .back-drop {
+    //         border-color: c.$crown-color-3;
+    //     }
+    // }
 }
 .weapon-crown-4 {
     .weapon-crown-bar {
         background-color: c.$crown-color-4;
     }
-    &.select {
-        .right-side,
-        .left-side {
-            border-color: c.$crown-color-4;
-        }
-        .back-drop {
-            border-color: c.$crown-color-4;
-        }
-    }
+    // &.select {
+    //     .right-side,
+    //     .left-side {
+    //         border-color: c.$crown-color-4;
+    //     }
+    //     .back-drop {
+    //         border-color: c.$crown-color-4;
+    //     }
+    // }
 }
 .weapon-crown-5 {
     .weapon-crown-bar {
         background-color: c.$crown-color-5;
     }
-    &.select {
-        .right-side,
-        .left-side {
-            border-color: c.$crown-color-5;
-        }
-        .back-drop {
-            border-color: c.$crown-color-5;
-        }
-    }
+    // &.select {
+    //     .right-side,
+    //     .left-side {
+    //         border-color: c.$crown-color-5;
+    //     }
+    //     .back-drop {
+    //         border-color: c.$crown-color-5;
+    //     }
+    // }
 }
 .weapon-crown-6 {
     .weapon-crown-bar {
         background-color: c.$crown-color-6;
     }
-    &.select {
-        .right-side,
-        .left-side {
-            border-color: c.$crown-color-6;
-        }
-        .back-drop {
-            border-color: c.$crown-color-6;
-        }
-    }
+    // &.select {
+    //     .right-side,
+    //     .left-side {
+    //         border-color: c.$crown-color-6;
+    //     }
+    //     .back-drop {
+    //         border-color: c.$crown-color-6;
+    //     }
+    // }
 }
-.select {
-    .back-drop {
-        background-color: #000000;
-        border-radius: 23% 23% 0 0;
-    }
+.select .back-drop {
+    background-color: rgba(0, 0, 0, 0.25);
+    border-color: $neutral-border-color;
 }
+
