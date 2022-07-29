@@ -1,0 +1,62 @@
+
+@mixin icons() {
+    $path: "../assets/icon/";
+
+    .icon-aim-speed { background-image: url('#{$path}aim_speed.svg'); }
+    .icon-hip-shot-accuracy { background-image: url('#{$path}hip_shot_accuracy.svg'); }
+    .icon-weapon-recoil { background-image: url('#{$path}weapon_recoil.svg'); }
+    .icon-weapon-sway { background-image: url('#{$path}weapon_sway.svg'); }
+    .icon-make-em-count { background-image: url('#{$path}make_em_count.svg'); }
+    .icon-reload-speed { background-image: url('#{$path}reload_speed.svg'); }
+    .icon-run-and-gun { background-image: url('#{$path}run_and_gun.svg'); }
+    .icon-armor { background-image: url('#{$path}armor.svg'); }
+    .icon-armor-damage { background-image: url('#{$path}armor_damage.svg'); }
+    .icon-trigger-happy { background-image: url('#{$path}trigger_happy.svg'); }
+    .icon-throw-accuracy { background-image: url('#{$path}throw_accuracy.svg'); }
+    .icon-flanking { background-image: url('#{$path}flanking.svg'); }
+    .icon-enemy-marking { background-image: url('#{$path}enemy_marking.svg'); }
+    .icon-designated-target { background-image: url('#{$path}designated_target.svg'); }
+    .icon-last-man-standing { background-image: url('#{$path}last_man_standing.svg'); }
+    .icon-throw-distance { background-image: url('#{$path}throw_distance.svg'); }
+    .icon-healer { background-image: url('#{$path}healer.svg'); }
+    .icon-veteran-guerilla { background-image: url('#{$path}veteran_guerilla.svg'); }
+    .icon-heal-amount { background-image: url('#{$path}heal_amount.svg'); }
+    .icon-revive-speed { background-image: url('#{$path}revive_speed.svg'); }
+    .icon-stamina-amount { background-image: url('#{$path}stamina_amount.svg'); }
+    .icon-running-speed { background-image: url('#{$path}running_speed.svg'); }
+    .icon-carry-capacity { background-image: url('#{$path}carry_capacity.svg'); }
+    .icon-steady-feet { background-image: url('#{$path}steady_feet.svg'); }
+    .icon-down-but-not-out { background-image: url('#{$path}down_but_not_out.svg'); }
+    .icon-stamina-recharge { background-image: url('#{$path}stamina_recharge.svg'); }
+    .icon-health-amount { background-image: url('#{$path}health_amount.svg'); }
+    .icon-visibility { background-image: url('#{$path}visibility.svg'); }
+    .icon-movement-noise { background-image: url('#{$path}movement_noise.svg'); }
+    .icon-covert-movement-speed { background-image: url('#{$path}covert_movement_speed.svg'); }
+    .icon-spotting-intel { background-image: url('#{$path}spotting_intel.svg'); }
+    .icon-inquisitive-mind { background-image: url('#{$path}inquisitive_mind.svg'); }
+    .icon-component-damage { background-image: url('#{$path}component_damage.svg'); }
+    .icon-emp-expert { background-image: url('#{$path}emp_expert.svg'); }
+    .icon-remote-hacking { background-image: url('#{$path}remote_hacking.svg'); }
+    .icon-chemist { background-image: url('#{$path}chemist.svg'); }
+    .icon-lock-picking { background-image: url('#{$path}lock_picking.svg'); }
+    .icon-salvage { background-image: url('#{$path}salvage.svg'); }
+    .icon-mechanic { background-image: url('#{$path}mechanic.svg'); }
+    .icon-explosives-expert { background-image: url('#{$path}explosives_expert.svg'); }
+
+    // Specialization Skills
+    .icon-marksman { background-image: url('#{$path}marksman.svg'); }
+    .icon-vanguard { background-image: url('#{$path}vanguard.svg'); }
+    .icon-commander { background-image: url('#{$path}commander.svg'); }
+    .icon-medic { background-image: url('#{$path}medic.svg'); }
+    .icon-survivor { background-image: url('#{$path}survivor.svg'); }
+    .icon-commando { background-image: url('#{$path}commando.svg'); }
+    .icon-hacker { background-image: url('#{$path}hacker.svg'); }
+    .icon-engineer { background-image: url('#{$path}engineer.svg'); }
+    .icon-favicon { background-image: url('#{$path}favicon.svg'); }
+
+    // Lock Icons
+    .icon-lock:not(.specialization) { background-image: url('#{$path}lock.svg'); }
+    .icon-lock.specialization { background-image: url('#{$path}specialization_lock.svg'); }
+    .icon-lock-trans { background-image: url('#{$path}lock_trans.svg'); }
+}
+

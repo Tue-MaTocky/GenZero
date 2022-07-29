@@ -2,6 +2,7 @@
 
 $bg-scroll-duration: 240s;
 $inner-circle-radius: 3.25rem;
+
 :host {
     position: relative;
     background-image: url(/assets/img/weapons_bg.jpg);
@@ -32,11 +33,13 @@ $inner-circle-radius: 3.25rem;
     background-color: lime;
     z-index: 100;
 }
+
 .main-content {
     z-index: 10;
     height: 100%;
     width: 100%;
 }
+
 .origin {
     z-index: 2;
     position: absolute;
@@ -47,6 +50,7 @@ $inner-circle-radius: 3.25rem;
     margin: auto;
     height: 20.875rem;
     width: 20.875rem;
+
     .event-origin {
         position: absolute;
         top: 0;
@@ -57,12 +61,14 @@ $inner-circle-radius: 3.25rem;
         height: $inner-circle-radius * 2;
         width: $inner-circle-radius * 2;
         border-radius: 100%;
+
         .slot-0 { 
             top: -5.15rem;
             bottom: auto;
             left: 0;
             right: 0;
         }
+
         .slot-1 {
             transform: rotate(45deg);
             top: -3.5rem;
@@ -70,6 +76,7 @@ $inner-circle-radius: 3.25rem;
             right: -3.25rem;
             left: auto;
         }
+
         .slot-2 {
             transform: rotate(90deg);
             top: 0.45rem;
@@ -77,6 +84,7 @@ $inner-circle-radius: 3.25rem;
             right: -4.75rem;
             left: auto;
         }
+
         .slot-3 {
             transform: rotate(135deg);
             top: auto;
@@ -84,6 +92,7 @@ $inner-circle-radius: 3.25rem;
             right: -3.25rem;
             left: auto;
         }
+
         .slot-4 {
             transform: rotate(180deg);
             bottom: -5.25rem;
@@ -91,6 +100,7 @@ $inner-circle-radius: 3.25rem;
             left: 0;
             right: 0;
         }
+
         .slot-5 {
             transform: rotate(225deg);
             bottom: -3.65rem;
@@ -98,6 +108,7 @@ $inner-circle-radius: 3.25rem;
             left: -3.1rem;
             right: auto;
         }
+
         .slot-6 {
             transform: rotate(270deg);
             top: 0.45rem;
@@ -105,6 +116,7 @@ $inner-circle-radius: 3.25rem;
             right: auto;
             left: -4.75rem;
         }
+
         .slot-7 {
             transform: rotate(315deg);
             top: -3.5rem;
@@ -113,6 +125,7 @@ $inner-circle-radius: 3.25rem;
             left: -3.25rem;
         }
     }
+
     .weapon-slice-event-catcher {
         cursor: pointer;
         z-index: 10;

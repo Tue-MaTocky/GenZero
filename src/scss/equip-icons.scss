@@ -1,0 +1,39 @@
+
+@mixin icons() {
+    $path: "../assets/equip_icon/";
+
+    .icon-adrenaline { background-image: url('#{$path}adrenaline_shot.svg'); }
+    .icon-simple-medkit { background-image: url('#{$path}simple_first_aid_kit.svg'); }
+    .icon-standard-medkit { background-image: url('#{$path}standard_first_aid_kit.svg'); }
+    .icon-advanced-medkit { background-image: url('#{$path}advanced_first_aid_kit.svg'); }
+    .icon-paramedic-response-pack { background-image: url('#{$path}paramedic_response_pack.svg'); }
+    .icon-semla { background-image: url('#{$path}semla.svg'); }
+    .icon-ammo-pack { background-image: url('#{$path}ammo_pack.svg'); }
+    .icon-firework { background-image: url('#{$path}firework.svg'); }
+    .icon-firework-box { background-image: url('#{$path}firework_box.svg'); }
+    .icon-hairpin { background-image: url('#{$path}lockpick_hairpin.svg'); }
+    .icon-air-tank { background-image: url('#{$path}compressed_air_tank.svg'); }
+    .icon-gas-tank { background-image: url('#{$path}explosive_gas_tank.svg'); }
+    .icon-emergency-flare { background-image: url('#{$path}emergency_flare.svg'); }
+    .icon-sticky-flare { background-image: url('#{$path}sticky_emergency_flare.svg'); }
+    .icon-radio { background-image: url('#{$path}radio.svg'); }
+    .icon-field-radio { background-image: url('#{$path}field_radio.svg'); }
+    .icon-grenade { background-image: url('#{$path}grenade.svg'); }
+    .icon-smoke-grenade { background-image: url('#{$path}smoke_grenade.svg'); }
+    .icon-light-comm-array { background-image: url('#{$path}light_comm_array_lure.svg'); }
+    .icon-medium-comm-array { background-image: url('#{$path}medium_comm_array_lure.svg'); }
+    .icon-heavy-comm-array { background-image: url('#{$path}heavy_comm_array_lure.svg'); }
+    .icon-car-battery { background-image: url('#{$path}car_battery_emp.svg'); }
+    .icon-land-mine { background-image: url('#{$path}land_mine.svg'); }
+    .icon-small-emp-cell { background-image: url('#{$path}small_emp_cell.svg'); }
+    .icon-medium-emp-cell { background-image: url('#{$path}medium_emp_cell.svg'); }
+    .icon-large-emp-cell { background-image: url('#{$path}large_emp_cell.svg'); }
+    .icon-small-fuel-cell { background-image: url('#{$path}small_fuel_cell.svg'); }
+    .icon-medium-fuel-cell { background-image: url('#{$path}medium_fuel_cell.svg'); }
+    .icon-large-fuel-cell { background-image: url('#{$path}large_fuel_cell.svg'); }
+    .icon-molotov-cocktail { background-image: url('#{$path}molotov_cocktail.svg'); }
+    .icon-portable-cover { background-image: url('#{$path}portable_cover.svg'); }
+    .icon-portable-machine-gun-turret { background-image: url('#{$path}portable_machine_gun_turret.svg'); }
+    .icon-remote-controlled-explosive { background-image: url('#{$path}remote_controlled_explosive.svg'); }
+    .icon-binoculars { background-image: url('#{$path}vantage_8x42_binoculars.svg'); }
+}

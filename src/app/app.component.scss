@@ -13,6 +13,7 @@
     .share-links {
         position: relative;
         padding: 0.25rem;
+
         a,
         button {
             border-radius: 100% !important;
@@ -22,19 +23,23 @@
             padding: 0 !important;
             z-index: 1000;
         }
+
         .icon-favicon {
             height: 50%;
             width: 50%;
             position: relative;
             margin: auto;
             top: 0.625rem;
+            background-size: cover;
         }
+
         button.shake {
             // animation: shake-rotation 1s infinite linear;
             animation: shake-rotation 1s linear;
             animation-iteration-count: 10;
             animation-delay: 3s;
         }
+
         .link-message {
             border-radius: 100%;
             position: absolute;
@@ -42,32 +47,39 @@
             right: 4.25rem;
             white-space: nowrap;
             line-height: 2.5rem;
+
             .mat-icon {
                 margin: auto 0 auto 0.15rem;
             }
+
             &.show-link-message {
                 animation: show-fade 7s linear;
             }
         }
     }
 }
+
 .copy-box {
     overflow: hidden;
     position: absolute;
     width: 0;
     height: 0;
     z-index: -100;
+
     &.show {
         width: 100vw;
         height: 100vh;
         z-index: 100;
+
         .flyout {
             top: 20%;
         }
+
         .overlay {
             opacity: 0.5;
         }
     }
+
     .flyout {
         transition: top 0.5s;
         position: absolute;
@@ -83,6 +95,7 @@
         z-index: 10;
         border-radius: 0.3125rem;
     }
+
     .overlay {
         transition: opacity 2s;
         position: absolute;
@@ -93,6 +106,7 @@
         @extend .no-select;
 
     }
+
     h2 {
         color: #ffffff;
         font-size: 1rem;
@@ -100,12 +114,14 @@
         font-weight: 100;
         @extend .no-select;
     }
+
     button {
         position: absolute;
         top: -1.25rem;
         right: -1.25rem;
         color: #ffffff;
     }
+
     input {
         width: 40vw;
     }
@@ -136,29 +152,36 @@
     0%, 41%, 48%, 51%, 54%, 56%, 58%, 60% {
         right: 4.25rem;
     }
+
     38% {
         // left: -15rem;
         right: 6.75rem;
     }
+
     45% {
         // left: -14.5rem;
         right: 5.25rem;
     }
+
     50%, 52% {
         // left: -14rem;
         right: 4.75rem;
     }
+
     55%, 57%, 59% {
         // left: -13.75rem;
         right: 4.5rem;
     }
+
     // fade
     0% {
         opacity: 1;
     }
+
     95% {
         opacity: 1;
     }
+
     100% {
         opacity: 0;
     }

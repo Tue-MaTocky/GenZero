@@ -16,6 +16,7 @@
     // &.weapon-page,
     // &.gear-page {
         @include button-style();
+
         button {
             border-radius: 0;
             text-transform: uppercase;
@@ -31,6 +32,7 @@
         .share-links .link-message {
             background-color: c.$header-skill-color;
         }
+
         .skill-button {
             @include selected-button();
         }
@@ -41,6 +43,7 @@
         .share-links .link-message {
             background-color: c.$header-weapon-color;
         }
+
         .weapon-button {
             @include selected-button();
         }
@@ -51,6 +54,7 @@
         .share-links .link-message {
             background-color: c.$header-gear-color;
         }
+
         .gear-button {
             @include selected-button();
         }
@@ -59,12 +63,15 @@
 
 @mixin selected-button() {
     border-color: rgba(198,197,190,0.3);
+
     > span {
         border-color: rgba(198,197,190,0.6);
     }
+
     > span > span {
         border-color: rgba(198,197,190,0.75);
     }
+
     > span > span > span {
         border-color: rgba(198,197,190,1);
     }

@@ -1,6 +1,8 @@
 @use "../../../scss/crown-colors.scss" as c;
 
-$neutral-border-color: rgba(100, 100, 100, 0.5);
+$circle-border-color: rgba(100, 100, 100, 0.5);
+$side-border-color: rgba(100, 100, 100, 0.75);
+$select-border-color: rgba(200, 200, 200, 0.75);
 $gap-color: #333333;
 $border-width: 0.125rem;
 $inner-circle-radius: 3.25rem;
@@ -9,14 +11,6 @@ $side-height: $outer-circle-radius - $inner-circle-radius + $border-width;
 $vertical-position: $side-height * 1.5 + $inner-circle-radius - $border-width;
 $side-rotation: 22.5deg;
 
-.center {
-    position: absolute;
-    margin: auto;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
 :host {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -29,26 +23,40 @@ $side-rotation: 22.5deg;
     width: 100%;
     @extend .center;
 }
+
+.center {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
 .wrapper {
     height: 100%;
     width: 100%;
     position: relative;
 }
+
 .outer-circle,
 .inner-circle {
-    border: $border-width solid $neutral-border-color;
+    border: $border-width solid $circle-border-color;
     border-radius: 100%;
     overflow: hidden;
     @extend .center;
 }
+
 .inner-circle {
     height: $inner-circle-radius * 2;
     width: $inner-circle-radius * 2;
 }
+
 .outer-circle {
     height: $outer-circle-radius * 2;
     width: $outer-circle-radius * 2;
 }
+
 .back-drop {
     z-index: -2;
     position: absolute;
@@ -61,7 +69,9 @@ $side-rotation: 22.5deg;
     border-top: 0.9375rem solid transparent;
     border-radius: 23% 23% 0 0;
     transform: matrix3d(2, 0, 0, 0, 0, 0.5, 0, 0.00999, 0, 0, 1, 0, 0, 0, 0, 1);
+    background-color: rgba(255, 255, 255, 0.03);
 }
+
 .right-side,
 .left-side {
     background-color: $gap-color;
@@ -73,18 +83,21 @@ $side-rotation: 22.5deg;
     bottom: 10.625rem;
     margin: auto;
 }
+
 .left-side {
-    border-right: $border-width solid $neutral-border-color;
+    border-right: $border-width solid $side-border-color;
     transform: rotate(-$side-rotation);
     left: 0;
     right: 4.25rem;
 }
+
 .right-side {
-    border-left: $border-width solid $neutral-border-color;
+    border-left: $border-width solid $side-border-color;
     transform: rotate($side-rotation);
     left: 4.25rem;
     right: 0;
 }
+
 .position-label {
     position: absolute;
     margin: 0 auto 0;
@@ -100,19 +113,20 @@ $side-rotation: 22.5deg;
     border-radius: 33%;
     font-weight: 100;
 }
+
 .portrait {
     position: absolute;
     margin: 0 auto 0;
     left: 0;
     right: 0;
     top: 3.25rem;
-    width: 6rem;
-    height: 3rem;
-    background-color: #888888;
-    opacity: 0.5;
+    width: 4.75rem;
+    height: 2.75rem;
     z-index: 10;
-    opacity: 0.0;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
+
 .weapon-crown-bar {
     z-index: -1;
     position: absolute;
@@ -124,95 +138,126 @@ $side-rotation: 22.5deg;
     top: 6.45rem;
     border-radius: 66% 66% 0% 0%;
 }
-.weapon-crown-0 .weapon-crown-bar {
-    background-color: transparent;
+
+.weapon-crown-0 {
+    .weapon-crown-bar {
+        background-color: transparent;
+    }
+
+    &.select {
+        .right-side,
+        .left-side {
+            border-color: $select-border-color;
+        }
+
+        .back-drop {
+            border-color: $select-border-color;
+        }
+    }
 }
+
 .weapon-crown-1 {
     .weapon-crown-bar {
         background-color: c.$crown-color-1;
     }
-    // &.select {
-    //     .right-side,
-    //     .left-side {
-    //         border-color: c.$crown-color-1;
-    //     }
-    //     .back-drop {
-    //         border-color: c.$crown-color-1;
-    //     }
-    // }
+
+    &.select {
+        .right-side,
+        .left-side {
+            border-color: c.$crown-color-1;
+        }
+
+        .back-drop {
+            border-color: c.$crown-color-1;
+        }
+    }
 }
+
 .weapon-crown-2 {
     .weapon-crown-bar {
         background-color: c.$crown-color-2;
     }
-    // &.select {
-    //     .right-side,
-    //     .left-side {
-    //         border-color: c.$crown-color-2;
-    //     }
-    //     .back-drop {
-    //         border-color: c.$crown-color-2;
-    //     }
-    // }
+
+    &.select {
+        .right-side,
+        .left-side {
+            border-color: c.$crown-color-2;
+        }
+
+        .back-drop {
+            border-color: c.$crown-color-2;
+        }
+    }
 }
+
 .weapon-crown-3 {
     .weapon-crown-bar {
         background-color: c.$crown-color-3;
     }
-    // &.select {
-    //     .right-side,
-    //     .left-side {
-    //         border-color: c.$crown-color-3;
-    //     }
-    //     .back-drop {
-    //         border-color: c.$crown-color-3;
-    //     }
-    // }
+
+    &.select {
+        .right-side,
+        .left-side {
+            border-color: c.$crown-color-3;
+        }
+
+        .back-drop {
+            border-color: c.$crown-color-3;
+        }
+    }
 }
+
 .weapon-crown-4 {
     .weapon-crown-bar {
         background-color: c.$crown-color-4;
     }
-    // &.select {
-    //     .right-side,
-    //     .left-side {
-    //         border-color: c.$crown-color-4;
-    //     }
-    //     .back-drop {
-    //         border-color: c.$crown-color-4;
-    //     }
-    // }
+
+    &.select {
+        .right-side,
+        .left-side {
+            border-color: c.$crown-color-4;
+        }
+
+        .back-drop {
+            border-color: c.$crown-color-4;
+        }
+    }
 }
+
 .weapon-crown-5 {
     .weapon-crown-bar {
         background-color: c.$crown-color-5;
     }
-    // &.select {
-    //     .right-side,
-    //     .left-side {
-    //         border-color: c.$crown-color-5;
-    //     }
-    //     .back-drop {
-    //         border-color: c.$crown-color-5;
-    //     }
-    // }
+
+    &.select {
+        .right-side,
+        .left-side {
+            border-color: c.$crown-color-5;
+        }
+
+        .back-drop {
+            border-color: c.$crown-color-5;
+        }
+    }
 }
+
 .weapon-crown-6 {
     .weapon-crown-bar {
         background-color: c.$crown-color-6;
     }
-    // &.select {
-    //     .right-side,
-    //     .left-side {
-    //         border-color: c.$crown-color-6;
-    //     }
-    //     .back-drop {
-    //         border-color: c.$crown-color-6;
-    //     }
-    // }
-}
-.select .back-drop {
-    background-color: rgba(0, 0, 0, 0.25);
-    border-color: $neutral-border-color;
+
+    &.select {
+        .right-side,
+        .left-side {
+            border-color: c.$crown-color-6;
+        }
+
+        .back-drop {
+            border-color: c.$crown-color-6;
+        }
+    }
 }
 
+.select .back-drop {
+    background-color: rgba(255, 255, 255, 0.1);
+}

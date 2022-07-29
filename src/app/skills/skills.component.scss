@@ -24,7 +24,6 @@ $skill-column-gap: 0.5rem;
     background-repeat: no-repeat;
     background-position-y: bottom;
     background-position-x: center;
-    // background-size: cover;
 }
 
 .underlay {
@@ -36,7 +35,6 @@ $skill-column-gap: 0.5rem;
     width: 100%;
     background-image: url(/assets/img/skills_bg_robot.jpg);
     opacity: 0;
-    // transition: opacity 30s;
 }
 
 .skill-page-main-content {
@@ -50,6 +48,7 @@ $skill-column-gap: 0.5rem;
 .skill-progress {
     @extend .no-select;
     padding: 1rem 0;
+
     .active-specialization {
         cursor: pointer;
         overflow: hidden;
@@ -57,29 +56,36 @@ $skill-column-gap: 0.5rem;
         width: 0;
         opacity: 0;
         transition: margin-right 1s, width 1s, opacity 1s;
+
         &.slide-open {
             width: 13rem;
             opacity: 1;
             margin-right: 4%
         }
+
         .icon {
+            background-size: cover;
             width: 3rem;
             height: 3rem;
         }
+
         .name {
             margin: auto 0;
             padding-left: 0.25rem;
         }
+
         .title,
         .skill-name {
             text-transform: uppercase;
             line-height: 1.2rem;
             white-space: nowrap;
-         }
+        }
+
         .title {
             font-size: 0.85rem;
             color: $text-shade-color;
         }
+
         .skill-name {
             font-size: 1rem;
             font-weight: 600;
@@ -87,8 +93,10 @@ $skill-column-gap: 0.5rem;
             letter-spacing: 0.1rem;
         }
     }
+
     .skill-bar {
         padding-top: 0.15rem;
+
         > span {
             line-height: 1rem;
             font-size: 1rem;
@@ -97,22 +105,27 @@ $skill-column-gap: 0.5rem;
             color: $text-shade-color;
             padding-top: 1.55rem;
         }
+
         .progress-bar {
             height: 1.2rem;
             margin-top: 1.15rem;
             padding-left: 0.3rem;
+
             > span {
                 background-color: $progress-bar-background;
                 width: .5rem;
                 height: 100%;
                 margin: 0 0.25rem 0 0;
                 transform: skew(33deg, 0deg);
+
                 &.highlight {
                     background-color: $progress-bar-color;
-                    box-shadow: 0 0 0.5rem $progress-bar-color;                }
+                    box-shadow: 0 0 0.5rem $progress-bar-color;
+                }
             }
         }
     }
+
     .reset-button {
         button {
             color: $text-color;
@@ -121,6 +134,7 @@ $skill-column-gap: 0.5rem;
             font-size: 1.25rem;
             text-transform: uppercase;
         }
+
         span {
             color: $text-color;
             line-height: 0.75rem;
@@ -133,19 +147,23 @@ $skill-column-gap: 0.5rem;
 
 .skill-selection {
     .spacer:first-child { box-shadow: none; }
+
     .spacer {
         width: $skill-column-gap;
         background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
         box-shadow: 0 -1rem 3rem #000000;
         flex-shrink: 0;
     }
+
     .skill-group {
+        height: 100%;
+        padding: 0 0 1.5rem;
+
         &:hover {
             z-index: 10;
         }
-        height: 100%;
-        padding: 0 0 1.5rem;
     }
+
     h2 {
         color: $text-shade-color;
         font-size: 1rem;
@@ -154,37 +172,47 @@ $skill-column-gap: 0.5rem;
         line-height: 3rem;
         padding: 1rem 0 0;
     }
+
     > div {
         background-size: 100% 80%;
         background-repeat: no-repeat;
+
         &.combat {
             background-image: linear-gradient($combat-color, rgba(0,0,0,0));
+
             h2 {
                 background-color: $combat-title-color;
                 box-shadow: 0 2.5rem 1.5rem $combat-title-color;
             }
         }
+
         &.support {
             background-image: linear-gradient($support-color, rgba(0,0,0,0));
+
             h2 {
                 background-color: $support-title-color;
                 box-shadow: 0 2.5rem 1.5rem $support-title-color;
             }
         }
+
         &.survival {
             background-image: linear-gradient($survival-color, rgba(0,0,0,0));
+
             h2 {
                 background-color: $survival-title-color;
                 box-shadow: 0 2.5rem 1.5rem $survival-title-color;
             }
         }
+
         &.tech {
             background-image: linear-gradient($tech-color, rgba(0,0,0,0));
+
             h2 {
                 background-color: $tech-title-color;
                 box-shadow: 0 2.5rem 1.5rem $tech-title-color;
             }
         }
+
         &:hover h2 {
             color: $text-hover;
         }
@@ -194,6 +222,7 @@ $skill-column-gap: 0.5rem;
 .skill-details {
     padding-right: $skill-column-gap;
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1));
+
     h2 {
         color: $text-color;
         text-transform: uppercase;
@@ -201,8 +230,10 @@ $skill-column-gap: 0.5rem;
         line-height: 1.5rem;
         margin: 0.6rem 0.25rem 0;
     }
+
     .skill-count {
         padding-bottom: 0.25rem;
+
         span {
             position: relative;
             height: 0.65rem;
@@ -210,6 +241,7 @@ $skill-column-gap: 0.5rem;
             border-radius: 0.65rem;
             border: 0.125rem solid #ffffff;
             margin: 0 0.15rem;
+
             &.highlight i {
                 height: calc(100% - 0.25rem);
                 width: calc(100% - 0.25rem);
@@ -222,21 +254,26 @@ $skill-column-gap: 0.5rem;
             }
         }
     }
+
     .skill-specs {
         overflow-y: auto;
     }
+
     img {
         width: 100%;
     }
+
     .description {
         margin-top: 0.5rem;
         padding: 1rem 0.25rem;
+
         p {
             color: $text-color;
             font-size: 1.2rem;
             font-weight: 100;
             line-height: 1.75rem;
             margin-bottom: 1.25rem;
+
             &:not(.special, :first-child) {
                 padding-left: 3.75em;
                 text-indent: -3.75em;

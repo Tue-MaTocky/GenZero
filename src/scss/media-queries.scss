@@ -7,6 +7,7 @@
 
     @media (min-height: 1200px) {
         font-size: 22px;
+
         app-skills,
         .underlay {
             background-size: cover;
@@ -23,12 +24,14 @@
 
     @media (max-width: 1070px) {
         font-size: 14px;
+
         .active-bar,
         .skill-selection {
             flex-flow: row wrap !important;
             max-width: 65% !important;
             overflow: auto;
         }
+
         .reset-button,
         .skill-details {
             max-width: 35% !important;
@@ -41,6 +44,7 @@
             flex: 1 1 50% !important;
             max-width: 50% !important;
         }
+
         .spacer {
             width: 0;
         }
@@ -53,6 +57,7 @@
 
     @media (max-width: 875px) {
         font-size: 13px;
+
         #Header h1 {
             font-size: 1rem;
         }
@@ -61,10 +66,12 @@
         .skill-selection {
             max-width: 50% !important;
         }
+
         .reset-button,
         .skill-details {
             max-width: 50% !important;
         }
+
         .combat,
         .support,
         .survival,
@@ -77,27 +84,35 @@
             flex-direction: column !important;
             padding-left: 1rem;
         }
+
         .skill-progress {
             padding: 0;
+
             span { 
                 margin-bottom: 0.5rem;
             }
+
             button {
                 max-height: 2.5rem !important;
             }
         }
+
         .active-specialization {
             padding: 0.25rem 0;
+
             .icon {
                 width: 2.5rem;
                 height: 2.5rem;
             }
+
             .title { font-size: 0.75rem; }
             .skill-name { font-size: 0.85rem; }
+
             span {
                 margin-bottom: 0;
             }
         }
+
         .skill-bar {
             .progress-bar,
             span {
@@ -106,6 +121,7 @@
                 padding-bottom: 0.5rem;
             }
         }
+
         .reset-button {
             margin: auto 0 0;
         }
@@ -115,10 +131,10 @@
         .active-bar {
             max-width: 67% !important;
         }
+
         .reset-button {
             max-width: 33% !important;
         }
-
     }
 
     @media (max-width: 1400px) {

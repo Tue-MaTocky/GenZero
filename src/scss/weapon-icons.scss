@@ -1,0 +1,50 @@
+
+@mixin icons() {
+    $path: "../assets/weapon_icon/";
+
+    .icon-brannboll { background-image: url('#{$path}brannboll_bat.svg'); }
+    .icon-pitchfork { background-image: url('#{$path}resistance_pitchfork.svg'); }
+    .icon-flamethrower { background-image: url('#{$path}resistance_flamethrower.svg'); }
+    .icon-heavy-bow { background-image: url('#{$path}resistance_heavy_bow.svg'); }
+    .icon-moller { background-image: url('#{$path}klaucke_17.svg'); }
+    .icon-klaucke { background-image: url('#{$path}klaucke_17.svg'); }
+    .icon-magnus { background-image: url('#{$path}44_magnus.svg'); }
+    .icon-n9 { background-image: url('#{$path}n9_handgun.svg'); }
+    .icon-sjoqvist-semi-auto { background-image: url('#{$path}sjoqvist_semi_auto.svg'); }
+    .icon-hp5 { background-image: url('#{$path}hp5.svg'); }
+    .icon-com-10 { background-image: url('#{$path}com_10_smg.svg'); }
+    .icon-meusser { background-image: url('#{$path}meusser_hunting_rifle.svg'); }
+    .icon-algstudsare { background-image: url('#{$path}algstudsare_hunting_rifle.svg'); }
+    .icon-kotenok { background-image: url('#{$path}kotenok_sniper_rifle.svg'); }
+    .icon-s21 { background-image: url('#{$path}s21.svg'); }
+    .icon-ai-76 { background-image: url('#{$path}ai_76_assault_rifle.svg'); }
+    .icon-ag-5 { background-image: url('#{$path}automatgevar_5.svg'); }
+    .icon-n16 { background-image: url('#{$path}n16_assault_rifle.svg'); }
+    .icon-at-wad { background-image: url('#{$path}at_wad.svg'); }
+    .icon-kvm-89 { background-image: url('#{$path}kvm_89_squad_automatic_weapon.svg'); }
+    .icon-n60 { background-image: url('#{$path}n60_machine_gun.svg'); }
+    .icon-rlg-7 { background-image: url('#{$path}rlg_7.svg'); }
+    .icon-g79-grenade-launcher { background-image: url('#{$path}g79_grenade_launcher.svg'); }
+
+    // Experimental weapon types
+    .icon-sledgehammer { background-image: url('#{$path}exp_sledgehammer.svg'); }
+    .icon-exp-sledgehammer { background-image: url('#{$path}exp_sledgehammer.svg'); }
+
+    .icon-12g-pump-action { background-image: url('#{$path}12g_pump_action.svg'); }
+    .icon-exp-12g-pump-action { background-image: url('#{$path}exp_12g_pump_action.svg'); }
+
+    .icon-kpist { background-image: url('#{$path}exp_m46_kpist_smg.svg'); }
+    .icon-exp-kpist { background-image: url('#{$path}exp_m46_kpist_smg.svg'); }
+
+    .icon-pvg { background-image: url('#{$path}pansarvarnsgevar_90.svg'); }
+    .icon-exp-pvg { background-image: url('#{$path}exp_pansarvarnsgevar_90.svg'); }
+
+    .icon-ag-4 { background-image: url('#{$path}automatgevar_5.svg'); }
+    .icon-exp-ag-4 { background-image: url('#{$path}exp_automatgevar_4.svg'); }
+
+    .icon-kvm-59 { background-image: url('#{$path}exp_kvm_59_machine_gun.svg'); }
+    .icon-exp-kvm-59 { background-image: url('#{$path}exp_kvm_59_machine_gun.svg'); }
+
+    .icon-granatgevar { background-image: url('#{$path}granatgevar_m49.svg'); }
+    .icon-exp-granatgevar { background-image: url('#{$path}exp_granatgevar_m49.svg'); }
+}

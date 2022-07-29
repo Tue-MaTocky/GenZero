@@ -1,5 +1,7 @@
 @use 'scss/core-styles.scss' as core;
-@use 'scss/icons.scss' as icons;
+@use 'scss/skill-icons.scss' as skillIcons;
+@use 'scss/weapon-icons.scss' as weaponIcons;
+@use 'scss/equip-icons.scss' as equipIcons;
 @use 'scss/scrollbar.scss' as scroll;
 @use 'scss/material-styles.scss' as custom-mat;
 @use 'scss/media-queries.scss' as query;
@@ -40,7 +42,9 @@ $GenZero-theme: mat.define-light-theme((
 html#GenZero {
   @include custom-mat.material-styles();
   @include core.core-styles();
-  @include icons.icons();
+  @include skillIcons.icons();
+  @include weaponIcons.icons();
+  @include equipIcons.icons();
   @include scroll.scrollbar-styles();
   @include query.media-queries();
 }
