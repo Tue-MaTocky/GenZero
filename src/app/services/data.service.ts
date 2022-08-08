@@ -1,7 +1,7 @@
 import { Injectable, ElementRef } from '@angular/core';
 import { AngularFireAnalytics } from '@angular/fire/compat/analytics';
 import { skillData, Skill } from '../data/skillData';
-import { WeaponWheel } from '../data/weaponData';
+import { WeaponWheel } from '../data/weaponWheel';
 
 
 @Injectable({

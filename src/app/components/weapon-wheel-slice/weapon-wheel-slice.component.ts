@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, HostBinding } from '@angular/core';
-import { WeaponWheel } from '../../data/weaponData';
+import { WeaponWheel } from '../../data/weaponWheel';
 import { DataService } from '../../services/data.service';
 
 @Component({

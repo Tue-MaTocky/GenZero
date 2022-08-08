@@ -6,6 +6,8 @@
     .icon-simple-medkit { background-image: url('#{$path}simple_first_aid_kit.svg'); }
     .icon-standard-medkit { background-image: url('#{$path}standard_first_aid_kit.svg'); }
     .icon-advanced-medkit { background-image: url('#{$path}advanced_first_aid_kit.svg'); }
+    .icon-medical-medkit { background-image: url('#{$path}advanced_first_aid_kit.svg'); }
+    .icon-rad-medkit { background-image: url('#{$path}advanced_first_aid_kit.svg'); }
     .icon-paramedic-response-pack { background-image: url('#{$path}paramedic_response_pack.svg'); }
     .icon-semla { background-image: url('#{$path}semla.svg'); }
     .icon-ammo-pack { background-image: url('#{$path}ammo_pack.svg'); }
@@ -36,4 +38,7 @@
     .icon-portable-machine-gun-turret { background-image: url('#{$path}portable_machine_gun_turret.svg'); }
     .icon-remote-controlled-explosive { background-image: url('#{$path}remote_controlled_explosive.svg'); }
     .icon-binoculars { background-image: url('#{$path}vantage_8x42_binoculars.svg'); }
+    .icon-boombox { background-image: url('#{$path}boombox.svg'); }
+    .icon-toy-lure { background-image: url('#{$path}explosive_toy_lure.svg'); }
+    .icon-deployable-tick { background-image: url('#{$path}firework_box.svg'); }
 }
