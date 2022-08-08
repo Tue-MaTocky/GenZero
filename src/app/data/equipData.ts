@@ -88,7 +88,7 @@ export const equipment: Equipment[] = [
     },{
         id: "el",
         label: "Explosive Gas Tank",
-        icon: "icon-air-tank",
+        icon: "icon-gas-tank",
         slottable: true,
         deployable: true,
         explosive: true

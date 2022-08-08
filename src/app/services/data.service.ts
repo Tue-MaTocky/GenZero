@@ -1,8 +1,9 @@
 import { Injectable, ElementRef } from '@angular/core';
 import { AngularFireAnalytics } from '@angular/fire/compat/analytics';
 import { skillData, Skill } from '../data/skillData';
-import { WeaponWheel } from '../data/weaponWheel';
-
+import { WeaponWheel, WeaponSlotItem } from '../data/weaponWheel';
+import { weapons } from '../data/weaponData';
+import { equipment } from '../data/equipData';
 
 @Injectable({
   providedIn: 'root'
@@ -13,31 +14,7 @@ export class DataService {
   private readonly skills = skillData;
 
   private data: any = {};
-  public weaponData: WeaponWheel[] = [{
-    slot: 1,
-    crown: 1
-  },{
-    slot: 2,
-    crown: 2
-  },{
-    slot: 3,
-    crown: 3
-  },{
-    slot: 4,
-    crown: 4
-  },{
-    slot: 5,
-    crown: 5
-  },{
-    slot: 6,
-    crown: 6
-  },{
-    slot: 7,
-    crown: 0
-  },{
-    slot: 8,
-    crown: 0
-  }];
+  public weaponData: WeaponWheel[] = [{slot:0},{slot:1},{slot:2},{slot:3},{slot:4},{slot:5},{slot:6},{slot:7}];
 
   private _selectedSpecial: Skill
   private _maxSkillsReached: boolean = false;
@@ -212,5 +189,22 @@ export class DataService {
 
   getWeapon(slot: number) {
     return this.weaponData[slot];
+  }
+  setWeapon(slot: number, id: string) {
+    let item: WeaponSlotItem;
+    // let crown = 0;
+    if(id[0] === "w") {
+      item = weapons.find(weapon => { return weapon.id === id; });
+      // crown = 5;
+    }
+    else if(id[0] === "e") {
+      item = equipment.find(weapon => { return weapon.id === id; });
+    }
+    // this.weaponData[slot] = {
+    //   slot: slot,
+    //   crown: crown,
+    //   item: item
+    // }
+    this.weaponData[slot].item = item;
   }
 }

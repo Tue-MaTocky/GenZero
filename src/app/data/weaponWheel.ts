@@ -21,4 +21,5 @@ export class WeaponWheel {
     barrel?: WeaponAcc;
     scope?: WeaponAcc;
     magazineCrown?: WeaponAcc;
+    item?: WeaponSlotItem;
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
+import { weapons } from '../data/weaponData';
+import { equipment } from '../data/equipData';
 
 @Component({
   selector: 'app-weapons',
@@ -7,15 +9,19 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./weapons.component.scss']
 })
 export class WeaponsComponent implements OnInit {
-  readonly slots: number[] = [0,1,2,3,4,5,6,7];
-
-  private selectedSlot: number = 5;
+  // private count = 0;
+  private selectedSlot: number = 0;
   
   toggleBg: boolean = false;
   
   constructor(readonly data: DataService) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+
+    // this.data.weaponData.forEach(item => {
+    //   this.data.setWeapon(item.slot, equipment[item.slot].id);
+    // });
+  }
 
   selected(slotNum: number): boolean {
     return this.selectedSlot === slotNum;
@@ -23,6 +29,10 @@ export class WeaponsComponent implements OnInit {
 
   selectSlot(slotNum: number) {
     this.selectedSlot = slotNum;
+    // this.count++;
+    // this.data.weaponData.forEach(item => {
+    //   this.data.setWeapon(item.slot, equipment[(item.slot + this.count) % equipment.length].id);
+    // });
   }
 
 }

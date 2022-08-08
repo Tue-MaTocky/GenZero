@@ -33,9 +33,13 @@ export class WeaponWheelSliceComponent implements OnInit {
   }
 
   get weapon(): WeaponWheel { return this.data.getWeapon(this.slicePosition); }
+  get icon(): string {
+    if (this.weapon?.crown === undefined || this.weapon?.item === undefined) { return ""; }
+    return this.weapon.crown === 6 && this.weapon.item.iconExp ? this.weapon.item.iconExp : this.weapon.item.icon;
+  }
 
   private updateCrown() {
-      this.crownClass = `weapon-crown-${this.weapon.crown}`;
+      this.crownClass = `weapon-crown-${this.weapon.crown || 0}`;
   }
   
 }

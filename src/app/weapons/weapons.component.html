@@ -1,12 +1,12 @@
 <div class="toggle-bkg" (click)="toggleBg = !toggleBg"></div>
 <div class="weapon-page-main-content">
     <div class="origin">
-        <weapon-wheel-slice *ngFor="let slot of slots" [slicePosition]="slot" [select]="selected(slot)"></weapon-wheel-slice>
+        <weapon-wheel-slice *ngFor="let data of data.weaponData" [slicePosition]="data.slot" [select]="selected(data.slot)"></weapon-wheel-slice>
         <div class="event-origin">
             <div class="weapon-slice-event-catcher"
-                [ngClass]="'slot-' + slot"
-                *ngFor="let slot of slots"
-                (click)="selectSlot(slot)"
+                [ngClass]="'slot-' + data.slot"
+                *ngFor="let data of data.weaponData"
+                (click)="selectSlot(data.slot)"
             ></div>
         </div>
     </div>
