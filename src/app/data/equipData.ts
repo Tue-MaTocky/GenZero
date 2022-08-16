@@ -280,5 +280,12 @@ export const equipment: Equipment[] = [
         icon: "icon-rad-medkit",
         slottable: true,
         consumable: true
+    },{
+        id: "ean",
+        label: "Poison Gas Tank",
+        icon: "icon-poison-tank",
+        slottable: true,
+        deployable: true,
+        explosive: true
     }
 ];
