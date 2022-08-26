@@ -20,8 +20,8 @@
             (mouseenter)="onMouseEnter(skill)"
         ></div>
     </div>
-    <span class="level-count" [cloak]="clockLabel" [class.hover]="hovering" fxLayout="column" fxLayoutAlign="start center">
-        <span *ngIf="!lockSkill">{{data.get(skill.id) + "/" + skill.maxLevel}}</span>
+    <span class="level-count" [cloak]="clockLabel" [class.hover]="hovering" [ngClass]="showLevelCount" fxLayout="column" fxLayoutAlign="start center">
+        <span class="count">{{data.get(skill.id) + "/" + skill.maxLevel}}</span>
         <span class="label">{{skill.label}}</span>
     </span>
 </div>
