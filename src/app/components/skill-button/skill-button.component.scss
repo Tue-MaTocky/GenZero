@@ -106,7 +106,6 @@ $button-size: 3rem;
     text-transform: uppercase;
     width: max-content;
     position: absolute;
-    border: 0.125rem solid #ffffff;
     border-radius: 0.1875rem;
     color: #ffffff;
     top: $button-size + 0.5rem;
@@ -120,6 +119,11 @@ $button-size: 3rem;
     transition: max-width 0.25s ease-in-out;
     max-width: 2.35rem;
 
+
+    &.show,
+    &.hover {
+        border: 0.125rem solid #ffffff;
+    }
     &.hover {
         max-width: 175%;
         z-index: 1;
@@ -141,6 +145,14 @@ $button-size: 3rem;
         font-size: 0.75rem;
         white-space: nowrap;
         overflow: hidden;
+    }
+    .count {
+        height: 0;
+        overflow: hidden;
+        transition: height 0.25s;
+    }
+    &.show .count {
+        height: 1.1875rem;
     }
 }
 
