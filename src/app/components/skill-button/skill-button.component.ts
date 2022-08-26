@@ -67,6 +67,10 @@ export class SkillButtonComponent implements OnInit {
   }
 
   get clockLabel(): boolean {
-    return (this.lockSkill || this.data.maxSkillsReached && this.data.get(this.skill.id) <= 0) && !this.hovering;
+    return !this.hovering && (this.lockSkill || this.data.maxSkillsReached && this.data.get(this.skill.id) <= 0);
+  }
+
+  get showLevelCount(): {'show': boolean } {
+    return {'show': this.data.get(this.skill.id) > 0 && (this.data.maxSkillsReached || !this.lockSkill) };
   }
 }
