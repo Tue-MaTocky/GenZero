@@ -1,7 +1,6 @@
 @use "../../scss/crown-colors.scss" as c;
 
-$bg-scroll-duration: 240s;
-$inner-circle-radius: 3.25rem;
+$inner-circle-radius: 4.875rem;
 
 :host {
     position: relative;
@@ -48,8 +47,8 @@ $inner-circle-radius: 3.25rem;
     left: -2px;
     right: 0;
     margin: auto;
-    height: 20.875rem;
-    width: 20.875rem;
+    height: 31.3125rem;
+    width: 31.3125rem;
 
     .event-origin {
         position: absolute;
@@ -63,7 +62,7 @@ $inner-circle-radius: 3.25rem;
         border-radius: 100%;
 
         .slot-0 { 
-            top: -5.15rem;
+            top: -7.725rem;
             bottom: auto;
             left: 0;
             right: 0;
@@ -71,31 +70,31 @@ $inner-circle-radius: 3.25rem;
 
         .slot-1 {
             transform: rotate(45deg);
-            top: -3.5rem;
+            top: -5.25rem;
             bottom: auto;
-            right: -3.25rem;
+            right: -4.875rem;
             left: auto;
         }
 
         .slot-2 {
             transform: rotate(90deg);
-            top: 0.45rem;
+            top: 0.675rem;
             bottom: auto;
-            right: -4.75rem;
+            right: -7.125rem;
             left: auto;
         }
 
         .slot-3 {
             transform: rotate(135deg);
             top: auto;
-            bottom: -3.5rem;
-            right: -3.25rem;
+            bottom: -5.25rem;
+            right: -4.875rem;
             left: auto;
         }
 
         .slot-4 {
             transform: rotate(180deg);
-            bottom: -5.25rem;
+            bottom: -7.875rem;
             top: auto;
             left: 0;
             right: 0;
@@ -103,26 +102,26 @@ $inner-circle-radius: 3.25rem;
 
         .slot-5 {
             transform: rotate(225deg);
-            bottom: -3.65rem;
+            bottom: -5.475rem;
             top: auto;
-            left: -3.1rem;
+            left: -4.65rem;
             right: auto;
         }
 
         .slot-6 {
             transform: rotate(270deg);
-            top: 0.45rem;
+            top: 0.675rem;
             bottom: auto;
             right: auto;
-            left: -4.75rem;
+            left: -7.125rem;
         }
 
         .slot-7 {
             transform: rotate(315deg);
-            top: -3.5rem;
+            top: -5.25rem;
             bottom: auto;
             right: auto;
-            left: -3.25rem;
+            left: -4.875rem;
         }
     }
 
@@ -131,8 +130,8 @@ $inner-circle-radius: 3.25rem;
         z-index: 10;
         position: absolute;
         margin: auto;
-        height: 5.75rem;
-        width: 5rem;
+        height: 8.625rem;
+        width: 7.5rem;
         border-radius: 0 0 100% 100%;
         background-color: transparent;
     }

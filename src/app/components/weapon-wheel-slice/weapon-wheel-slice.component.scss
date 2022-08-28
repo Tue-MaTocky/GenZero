@@ -4,9 +4,9 @@ $circle-border-color: rgba(100, 100, 100, 0.5);
 $side-border-color: rgba(100, 100, 100, 0.75);
 $select-border-color: rgba(200, 200, 200, 0.75);
 $gap-color: #333333;
-$border-width: 0.125rem;
-$inner-circle-radius: 3.25rem;
-$outer-circle-radius: 8.0625rem;
+$border-width: 0.1875rem;
+$inner-circle-radius: 4.875rem;
+$outer-circle-radius: 12.09375rem;
 $side-height: $outer-circle-radius - $inner-circle-radius + $border-width;
 $vertical-position: $side-height * 1.5 + $inner-circle-radius - $border-width;
 $side-rotation: 22.5deg;
@@ -63,24 +63,24 @@ $side-rotation: 22.5deg;
     margin: 0 auto 0;
     left: 0;
     right: 0;
-    top: -0.5rem;
-    height: 7.125rem;
-    width: 1.75rem;
-    border-top: 0.9375rem solid transparent;
+    top: -0.75rem;
+    height: 10.9875rem;
+    width: 2.625rem;
+    border-top: 1.40625rem solid transparent;
     border-radius: 23% 23% 0 0;
-    transform: matrix3d(2, 0, 0, 0, 0, 0.5, 0, 0.00999, 0, 0, 1, 0, 0, 0, 0, 1);
+    transform: matrix3d(2, 0, 0, 0, 0, 0.5, 0, 0.0064, 0, 0, 1, 0, 0, 0, 0, 1);
     background-color: rgba(255, 255, 255, 0.03);
 }
 
 .right-side,
 .left-side {
     background-color: $gap-color;
-    width: 0.0625rem;
+    width: 0.09375rem;
     width: $border-width;
     height: $side-height;
     position: absolute;
     top: 0;
-    bottom: 10.625rem;
+    bottom: 15.9375rem;
     margin: auto;
 }
 
@@ -88,28 +88,28 @@ $side-rotation: 22.5deg;
     border-right: $border-width solid $side-border-color;
     transform: rotate(-$side-rotation);
     left: 0;
-    right: 4.25rem;
+    right: 6.375rem;
 }
 
 .right-side {
     border-left: $border-width solid $side-border-color;
     transform: rotate($side-rotation);
-    left: 4.25rem;
+    left: 6.375rem;
     right: 0;
 }
 
 .position-label {
     position: absolute;
     margin: 0 auto 0;
-    padding: 0.0625rem 0.25rem;
+    padding: 0.09375rem 0.375rem;
     left: 0;
     right: 0;
     width: fit-content;
     height: fit-content;
     color: #ffffff;
-    font-size: 1rem;
-    line-height: 1.0625rem;
-    border: 0.0625rem solid #ffffff;
+    font-size: 1.5rem;
+    line-height: 1.59375rem;
+    border: 0.09375rem solid #ffffff;
     border-radius: 33%;
     font-weight: 100;
 }
@@ -119,11 +119,11 @@ $side-rotation: 22.5deg;
     margin: 0 auto 0;
     left: 0;
     right: 0;
-    top: 3.25rem;
-    width: 4.75rem;
-    height: 2.75rem;
+    top: 4.875rem;
+    width: 7.125rem;
+    height: 4.125rem;
     z-index: 10;
-    background-size: contain;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
@@ -133,9 +133,9 @@ $side-rotation: 22.5deg;
     margin: 0 auto 0;
     left: 0;
     right: 0;
-    width: 2.75rem;
-    height: 0.75rem;
-    top: 6.45rem;
+    width: 4.125rem;
+    height: 1.125rem;
+    top: 9.675rem;
     border-radius: 66% 66% 0% 0%;
 }
 
