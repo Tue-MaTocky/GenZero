@@ -587,8 +587,8 @@ export const skillData: SkillData = {
             mainImg: "remote_hacking.jpg",
             descriptionText: [
                 "Unlocks the ability to hack enemies using your binoculars. A successful hack confuses the enemy temporarily.",
-                "Level 1: Hacked for 20 seconds",
-                "Level 2: Hacked for 40 seconds"
+                "Level 1: Hacked for 50 seconds",
+                "Level 2: Hacked for 120 seconds"
             ],
             maxLevel: 2,
             specialization: false,
